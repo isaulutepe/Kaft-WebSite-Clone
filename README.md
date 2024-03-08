@@ -25,3 +25,5 @@
 22.	Adres ekleme
 23.	 Adres güncelleme
 24.	Adres silme
+
+![image](https://github.com/isaulutepe/Kaft-WebSite-Clone/assets/111301580/bfa9221c-016f-4ba1-9b89-d25a682ddf41)
