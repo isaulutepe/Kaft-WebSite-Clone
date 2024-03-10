@@ -11,6 +11,7 @@ KAFT, tasarım odaklı bir e-ticaret platformudur. Amacımız, kullanıcıların
 
 # GEREKSİNİMLER
 <a href="https://github.com/isaulutepe/Kaft-WebSite-Clone/blob/main/%C4%B0sa_Ulutepe_Gereksinimler.md">İsa Ulutepe Gereksinimler</a>
+
 7- Ürün Ekle (İrem Maydan)
 
 8- Ürün Sil (İrem Maydan)
