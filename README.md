@@ -16,17 +16,6 @@ KAFT, tasarım odaklı bir e-ticaret platformudur. Amacımız, kullanıcıların
 
 <a href="https://github.com/isaulutepe/Kaft-WebSite-Clone/blob/main/Sena_Y%C4%B1ld%C4%B1z_Gereksinimler.md">Sena Yıldız Gereksinimler</a>
 
-
-19- Adres güncelleme (Engin Gül)
-
-20- Adres silme (Engin Gül)
-
-21- İletişim Formu (Engin Gül)
-
-22- Kampanyalı Ürünler (Engin Gül)
-
-23- Ürün Filtreleme (Engin Gül)
-
-24- Arama (Engin Gül)
+<a href="https://github.com/isaulutepe/Kaft-WebSite-Clone/blob/main/Engin_GUL_Gereksinimler.md">Engin GÜL Gereksinimler</a>
 
 ![image](https://github.com/isaulutepe/Kaft-WebSite-Clone/assets/111301580/bfa9221c-016f-4ba1-9b89-d25a682ddf41)
