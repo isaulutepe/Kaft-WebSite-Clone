@@ -10,18 +10,7 @@ KAFT, tasarım odaklı bir e-ticaret platformudur. Amacımız, kullanıcıların
 **Proje Ekibi:** Engin Gül, İrem Maydan, İsa Ulutepe, Sena Yıldız
 
 # GEREKSİNİMLER
-1- Üye Ol (İsa Ulutepe)
-
-2- Giriş Yap (İsa Ulutepe)
-
-3- Ürün Listeleme (İsa Ulutepe)
-
-4- Kategoriye Göre Ürün Listeleme (İsa Ulutepe)
-
-5- Sepetteki Ürünleri Listeleme (İsa Ulutepe)
-
-6- Şifremi Unuttum (İsa Ulutepe)
-
+<a href="https://github.com/isaulutepe/Kaft-WebSite-Clone/blob/main/%C4%B0sa_Ulutepe_Gereksinimler.md">İsa Ulutepe Gereksinimler</a>
 7- Ürün Ekle (İrem Maydan)
 
 8- Ürün Sil (İrem Maydan)
