@@ -12,19 +12,9 @@ KAFT, tasarım odaklı bir e-ticaret platformudur. Amacımız, kullanıcıların
 # GEREKSİNİMLER
 <a href="https://github.com/isaulutepe/Kaft-WebSite-Clone/blob/main/%C4%B0sa_Ulutepe_Gereksinimler.md">İsa Ulutepe Gereksinimler</a>
 
-7- Ürün Ekle (İrem Maydan)
+<a href="https://github.com/isaulutepe/Kaft-WebSite-Clone/blob/main/İrem_Maydan_Gereksinimler.md">İrem Maydan Gereksinimler</a>
 
-8- Ürün Sil (İrem Maydan)
-
-9- Facebook ile giriş (İrem Maydan)
-
-10- Google ile giriş (İrem Maydan)
-
-11- Sipariş Takibi (İrem Maydan)
-
-12- Hediye kartı satın alma (İrem Maydan)
-
- <a href="https://github.com/isaulutepe/Kaft-WebSite-Clone/blob/main/Sena_Y%C4%B1ld%C4%B1z_Gereksinimler.md">Sena Yıldız Gereksinimler</a>
+<a href="https://github.com/isaulutepe/Kaft-WebSite-Clone/blob/main/Sena_Y%C4%B1ld%C4%B1z_Gereksinimler.md">Sena Yıldız Gereksinimler</a>
 
 
 19- Adres güncelleme (Engin Gül)
