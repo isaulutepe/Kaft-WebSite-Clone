@@ -1,6 +1,6 @@
 # Sena Yıldız Gereksinimler
 
-**Ürün Güncelle:** Kullanıcıların satışa sundukları ürünlerin detaylarını (örneğin fiyat, açıklama, fotoğraf vb.) güncellemelerine olanak sağlar.
+**1- Ürün Güncelle:** Kullanıcıların satışa sundukları ürünlerin detaylarını (örneğin fiyat, açıklama, fotoğraf vb.) güncellemelerine olanak sağlar.
 
 **2- Adres Ekleme:** Kullanıcıların profil bilgilerine yeni bir teslimat adresi eklemelerine olanak sağlar.
 
