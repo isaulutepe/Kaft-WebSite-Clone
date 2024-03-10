@@ -9,7 +9,7 @@ KAFT, tasarım odaklı bir e-ticaret platformudur. Amacımız, kullanıcıların
 
 **Proje Ekibi:** Engin Gül, İrem Maydan, İsa Ulutepe, Sena Yıldız
 
-#GEREKSİNİMLER
+# GEREKSİNİMLER
 1.	 Üye Ol
 2.	 Giriş Yap
 3.	 Ürün Ekle
