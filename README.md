@@ -34,17 +34,8 @@ KAFT, tasarım odaklı bir e-ticaret platformudur. Amacımız, kullanıcıların
 
 12- Hediye kartı satın alma (İrem Maydan)
 
-13- Ürün Güncelle (Sena Yıldız)
+ <a href="https://github.com/isaulutepe/Kaft-WebSite-Clone/blob/main/Sena_Y%C4%B1ld%C4%B1z_Gereksinimler.md">Sena Yıldız Gereksinimler</a>
 
-14- Adres ekleme (Sena Yıldız)
-
-15- Ürün satın alma (Sena Yıldız)
-
-16- Dil değiştirme (Sena Yıldız)
-
-17- Ürün detayı görüntüleme (Sena Yıldız)
-
-18- Sepete ürün Ekle (Sena Yıldız)
 
 19- Adres güncelleme (Engin Gül)
 
