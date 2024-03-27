@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uygulama 1</title>
+    <link rel="stylesheet" type="text/css" href="css/fullpage.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/fonts.css" />
+    <style>
+    </style>
+
+</head>
+
+<body>
+    <div class="header" id="header">
+        <div class="menucontainer">
+            <a href="#">
+                <!--<div class="menuitem">
+                    <div class="menuicon">
+                        <img src="images/menuwhite.png" width="24px" height="24px">
+                    </div>
+                    <div class="menutext" style="font-family: 'Font2';">Menu</div>
+                </div>-->
+            </a>
+            <div class="menuitem logo"><a href="index.html"><img src="images/logo-light.svg"></a></div>
+            <div class="menuitem login-basket">
+                <div class="login" style="font-family: 'Font2';"><a href="#">Giriş</a></div>
+                                    <!-- Gerekirse doldururum diye bıraktım -->
+         <div class="basket">
+            <a href="sepet.html">
+                        <img src="images/basketwhite.png">                        
+                        <span id="item-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger mt-50">0</span>
+                    </a>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    
+
+
+    <div id="fullpage">
+        
+        <div class="bg section s9">
+            <div class="headertextS9">
+                <h2>Sepetinizdeki Ürünler</h2>
+            </div>
+            <div id="productTableContainer">
+                <table id="productTable" style="margin: auto;"></table>
+                <div id="totalPrice" style="display: none; text-align: right;">Toplam Tutar: <span id="totalAmount"></span></div>
+            </div>
+            <div id="emptyMessage" style="display: none; text-align: center;">Sepetinizde ürün bulunmamaktadır</div>
+        </div>
+                     
+        <div class="bg section s11">
+            <div class="headertextS11">
+                <h2>Yenilerden ilk senin haberin olsun</h2>
+            </div>
+            <hr style="width: 500px;">
+            <br>
+            <div class="change">
+                <div class="country">Türkiye</div>
+                <div class="vertical-line">|</div>
+                <div class="language">Türkçe</div>
+            </div>
+
+            <div class="tableBox">
+                <table>
+                    <tr>
+                        <th>Ürünler</th>
+                        <th>Öne Çıkanlar</th>
+                        <th>Kaft Dünyası</th>
+                        <th>Bilgi</th>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Tasarım Tişört</a></td>
+                        <td><a href="#">2023 Tişört Serileri</a></td>
+                        <td><a href="#">KAFT Hakkında</a></td>
+                        <td><a href="#">Sipariş Takibi</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Basic Tişört</a></td>
+                        <td><a href="#">Fujifilm x KAFT</a></td>
+                        <td><a href="#">Tasarımcılar</a></td>
+                        <td><a href="#">iade ve Değişim</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Atlet</a></td>
+                        <td><a href="#">Tema x KAFT</a></td>
+                        <td><a href="#">KAFT Colors</a></td>
+                        <td><a href="#">Sipariş ve Ödeme</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Şort</a></td>
+                        <td><a href="#">Yeni Ürünler</a></td>
+                        <td><a href="#">Lookbook</a></td>
+                        <td><a href="#">Satış Noktaları</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Pantolon</a></td>
+                        <td> </td>
+                        <td><a href="#">Journery</a></td>
+                        <td><a href="#">Ekibe Katıl</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Çanta</a></td>
+                        <td> </td>
+                        <td><a href="#">KAFTsoul - Fotoğraflarınız</a></td>
+                        <td><a href="#">Yardım</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Ceket</a></td>
+                        <td></td>
+                        <td><a href="#">Hediye Kartı</a></td>
+                        <td><a href="#">İşlem Rehberi</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Tasarım Kapşonlu</a></td>
+                        <td> </td>
+                        <td><a href="#">Tee Machine</a></td>
+                        <td><a href="#">KVK ve Gizlilik Politikası</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Sweatshirt</a></td>
+                        <td> </td>
+                        <td> </td>
+                        <td><a href="#">Çerez Ayarları</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Bere</a></td>
+                        <td> </td>
+                        <td> </td>
+                        <td><a href="#">İletişim</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Çorap</a></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="socialMeediaIcons">
+                <!-- Gerekirse doldururum diye bıraktım -->
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script type="text/javascript" src="js/fullpage.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        new fullpage('#fullpage', {
+            autoScrolling: true
+        })
+    </script>
+    <script src="fullpage.min.js"></script>
+    <script>
+        $('#fullpage').fullpage({
+            //other options here
+            paddingTop: '50px'
+        });
+    </script>
+
+    <script>
+        // Örnek ürün listesi
+        var products = [];
+
+        // Sepetin kontrolünü sağlayan fonksiyon
+        function checkCart() {
+            var productListContainer = document.getElementById("productListContainer");
+            var
+            if (products.length === 0) {
+                document.getElementById("emptyMessage").style.display = "block";
+                document.getElementById("productTable").style.display = "none";
+                document.getElementById("totalPrice").style.display = "none";
+            } else {
+                var productTable = document.getElementById("productTable");
+                var totalAmount = 0;
+                productTable.innerHTML = "<tr><th>Ürünler</th><th>Adet</th><th>Fiyat</th></tr>";
+                products.forEach(function(product) {
+                    var row = "<tr><td>" + product.name + "</td><td>" + product.quantity + "</td><td>" + product.price + "</td></tr>";
+                    productTable.innerHTML += row;
+                    totalAmount += product.quantity * product.price;
+                });
+                document.getElementById("emptyMessage").style.display = "none";
+                document.getElementById("productTable").style.display = "block";
+                document.getElementById("totalPrice").style.display = "block";
+                document.getElementById("totalAmount").innerText = totalAmount.toFixed(2) + " TL";
+            }
+        }
+
+        // Sayfa yüklendiğinde sepeti kontrol et
+        window.onload = checkCart;
+    </script>
+<script>
+    // Sepetteki ürünleri kontrol et
+    function checkCartItems() {
+        var productTable = document.getElementById("productTable");
+        var emptyMessage = document.getElementById("emptyMessage");
+        var totalPrice = document.getElementById("totalPrice");
+
+        if (productTable.rows.length > 0) {
+            // Sepette ürün varsa göster
+            productTable.style.display = "block";
+            totalPrice.style.display = "block";
+            emptyMessage.style.display = "none";
+        } else {
+            // Sepette ürün yoksa uyarı mesajını göster
+            productTable.style.display = "none";
+            totalPrice.style.display = "none";
+            emptyMessage.style.display = "block";
+        }
+    }
+
+    // Sepet boşken uyarı mesajını göster
+    window.onload = function () {
+        checkCartItems();
+    };
+</script>
+
+</body>
+</html>
