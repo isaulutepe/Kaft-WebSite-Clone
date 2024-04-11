@@ -21,4 +21,7 @@ KAFT, tasarım odaklı bir e-ticaret platformudur. Amacımız, kullanıcıların
 # KULLANICI SENARYOLARI
 [Engin GÜL Kullanıcı Senaryosu](https://github.com/isaulutepe/Kaft-WebSite-Clone/files/14853599/EnginGulKullaniciSenaryosu.pdf)
 
+
+[İsa-Ulutepe-Kullanıcı-Senaryosu.pdf](https://github.com/isaulutepe/Kaft-WebSite-Clone/files/14951870/Isa-Ulutepe-Kullanici-Senaryosu.pdf)
+
 ![image](https://github.com/isaulutepe/Kaft-WebSite-Clone/assets/111301580/bfa9221c-016f-4ba1-9b89-d25a682ddf41)
