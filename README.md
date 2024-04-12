@@ -32,7 +32,7 @@ KAFT, tasarım odaklı bir e-ticaret platformudur. Amacımız, kullanıcıların
 
 ![Veritabanı Diyagrami](https://github.com/isaulutepe/Kaft-WebSite-Clone/assets/114800514/f43cf848-623f-406b-9b64-5cc960e2c7a6)
 
-# Durum DİYAGRAMI
+# DURUM DİYAGRAMI
 
 ![Durum Diyagrami](https://github.com/isaulutepe/Kaft-WebSite-Clone/blob/main/Durum%20Diyagram%C4%B1.png)
 
