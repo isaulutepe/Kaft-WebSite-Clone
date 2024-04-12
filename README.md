@@ -24,6 +24,8 @@ KAFT, tasarım odaklı bir e-ticaret platformudur. Amacımız, kullanıcıların
 
 [İsa-Ulutepe-Kullanıcı-Senaryosu.pdf](https://github.com/isaulutepe/Kaft-WebSite-Clone/files/14951870/Isa-Ulutepe-Kullanici-Senaryosu.pdf)
 
+[Sena Yıldız Kullanıcı Senaryosu](https://github.com/isaulutepe/Kaft-WebSite-Clone/blob/main/Sena%20Y%C4%B1ld%C4%B1z%20Durum%20Senaryosu.pdf)
+
 ![image](https://github.com/isaulutepe/Kaft-WebSite-Clone/assets/111301580/bfa9221c-016f-4ba1-9b89-d25a682ddf41)
 
 # VERİTABANI DİYAGRAMI
