@@ -1,5 +1,3 @@
-
-
 html,
 body {
     margin: 0;
@@ -7,51 +5,16 @@ body {
     position: relative;
     height: 100%;
     font-family: 'Font1', Arial, sans-serif;
+    scrollbar-width: none;
+    /* Firefox için */
+    -ms-overflow-style: none;
+    /* Internet Explorer için */
 }
 
-
-/* 
-  ##Cihaz = Masaüstü
-  ##Ekran = 1281px 'den yüksek çözünürlükler için
-*/
-
-@media (min-width: 1281px) {}
-
-/* 
-##Cihaz = Laptoplar, Masaüstü
-##Ekran = 1025px to 1280px Arası Ekranlar
-*/
-
-@media (min-width: 1025px) and (max-width: 1280px) {}
-
-/* 
-##Cihaz = Tabletler, Ipad (portrait/dikey modda)
-##Ekran = 768px to 1024px Arası Ekranlar
-*/
-
-@media (min-width: 768px) and (max-width: 1024px) {}
-
-/* 
-##Cihaz = Tabletler, Ipad (landscape/yatay modda)
-##Ekran = 768px to 1024px Arası Ekranlar
-*/
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {}
-
-/* 
-##Cihaz = Düşük Çözünürlüklü Tablet ve Mobil Ekranlar (Landscape / Yatay Modda)
-##Ekran = 481px to 767px Arası Ekranlar
-*/
-
-@media (min-width: 481px) and (max-width: 767px) {}
-
-/* 
-##Cihaz = En Çok Tercih Edilen Mobil Boyutlar (Portrait/Dikey Modda)
-##Ekran = 320px to 479px Arası Ekranlar
-*/
-
-@media (min-width: 320px) and (max-width: 480px) {}
-
+body::-webkit-scrollbar {
+    display: none;
+    /* Safari ve Chrome için */
+}
 
 /* Header alanının css düzenleme kodları */
 #header {
@@ -131,11 +94,15 @@ yaptılar bilmiyorum ben böyle yaptım :) */
 için kullandığım css alanları belirttiğim
 yeree kadar devvam ediyor. */
 
+.my-section {
+    position: relative;
+    bottom: 0;
+}
+
 .caption-container {
     position: absolute;
-    bottom: 100px;
-    right: 90px;
-
+    bottom: 10vh;
+    right: 15vh;
     z-index: 1000;
     opacity: 0.6;
     color: white;
@@ -173,22 +140,22 @@ yeree kadar devvam ediyor. */
 .s1 {
 
     background-size: cover;
-    background-image: url("../images/669.jpg");
-    
+    background-image: url("../../src/images/669.jpg");
+
 }
 
 /* Görünen ikinci background */
 
 .s2 {
     background-size: cover;
-    background-image: url("../images/670_2.jpg");
+    background-image: url("../../src/images/670_2.jpg");
 }
 
 /* Görünen üçüncü background */
 
 .s3 {
     background-size: cover;
-    background-image: url("../images/667.jpg");
+    background-image: url("../../src/images/667.jpg");
 }
 
 /* Görünen dördüncü background */
@@ -213,28 +180,28 @@ yeree kadar devvam ediyor. */
 
 .s5 {
     background-size: cover;
-    background-image: url("../images/665.jpg");
+    background-image: url("../../src/images/665.jpg");
 }
 
 /* Görünen altıncı background */
 
 .s6 {
     background-size: cover;
-    background-image: url("../images/662.jpg");
+    background-image: url("../../src/images/662.jpg");
 }
 
 /* Görünen yedinci background */
 
 .s7 {
     background-size: cover;
-    background-image: url("../images/659_1.jpg");
+    background-image: url("../../src/images/659_1.jpg");
 }
 
 /* Görünen seekizinci background */
 
 .s8 {
     background-size: cover;
-    background-image: url("../images/658_0.jpg");
+    background-image: url("../../src/images/658_0.jpg");
 }
 
 /* Görünen dokuzuncu background */
@@ -248,8 +215,80 @@ yeree kadar devvam ediyor. */
     padding: 0;
 }
 
+
 /* S9 alanı kayan slider bulunmakta burdan aiaıda belirttiğim yere kadar slider alanına 
-ait kodlar bnun kodları app.css içinde*/
+ait kodlar bulunmakta */
+.headertextS9 h2 {
+    color: #353532;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 22px;
+    padding: 5px 10px;
+    font-family: 'Font3', Arial, sans-serif;
+}
+
+
+.mySwiper {
+    position: relative;
+    text-align: center;
+    vertical-align: center;
+}
+
+/* Görünen resmin kaynolma animasyonu için  */
+.mySwiper img {
+    transition: opacity 0.5s linear;
+    opacity: 1;
+}
+
+/* Kayan her resmin görünür hale gelmesi için */
+.mySwiper .swiper-slide-prev img {
+    opacity: 0;
+}
+
+.mySwiper .swiper-slide-next img {
+    opacity: 0;
+}
+
+/* kayan slide alanını belirleyen container */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+/* Her bir slide nesnesi */
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+/* resimlerin arasındaki çizgi */
+.swiper-slide hr {
+    border-top: 2px solid black;
+    width: 100%;
+}
+
+/* Slidelar içindeki textlerin özellikleri */
+.swiper-slide .sliderText {
+    color: black;
+    position: absolute;
+    bottom: 160px;
+    left: 210px;
+    font-size: 20px;
+    padding: 5px 10px;
+    font-family: 'Font2', Arial, sans-serif;
+
+}
+
+
+
+
+/* Buraya kadar S9 alnındaki slideer yapısına ait kodlardı */
 
 /* Görünen onuncu background */
 /* yanyan 4 resim ve üzeride yazıların bulundugu 
@@ -277,19 +316,19 @@ olan kodlar s10 alanına ait */
 }
 
 .b1 {
-    background-image: url("../images/block_gift_card.jpg");
+    background-image: url("../../src/images/block_gift_card.jpg");
 }
 
 .b2 {
-    background-image: url("../images/block_tema.jpg");
+    background-image: url("../../src/images/block_tema.jpg");
 }
 
 .b3 {
-    background-image: url("../images/block_tee_machine.jpg");
+    background-image: url("../../src/images/block_tee_machine.jpg");
 }
 
 .b4 {
-    background-image: url("../images/block_sustainability.jpg");
+    background-image: url("../../src/images/block_sustainability.jpg");
 }
 
 /* Kutular içindeki Textlerin düzenlenmesi  */
@@ -323,7 +362,7 @@ başlıyor belirrtiğim yerde son buluyor. */
 
 /* S11 alanında bulunan başlıkların düzenlenmesi */
 .headertextS11 {
-    margin-top: 10%;
+    margin-top: 10vh;
     text-align: center;
     font-family: 'Font2';
 }
@@ -358,12 +397,15 @@ Belki tablo değildir ama bana tablo yapmak mantıklı geldi */
     /* Tablo genişliği */
 }
 
+.socialMediaIcons {
+    z-index: 100000;
+}
+
 table {
     width: 100%;
     /* Tablo genişliği */
     border-collapse: collapse;
     font-family: 'Font2';
-
 }
 
 th,
