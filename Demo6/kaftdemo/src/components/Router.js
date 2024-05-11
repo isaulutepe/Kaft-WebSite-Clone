@@ -11,6 +11,7 @@ const RoutesComponent = () => {
         <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/admin" element={<AdminPage />} />
+
       {/* // Diğer rotalarınızı burada ekleyin */}
         </Routes>
     );

@@ -1,59 +1,72 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react';
+import HomePage from './Home';
+import Product from './Products';
+import Customer from './Customers'
+import Categoriy from './Categories';
+import '../../Css/admin.css';
 
-export default class Body extends Component {
-    render() {
-        return (
-            <div style={{margin:'8%' }}>
-                <h1>Admin Paneli</h1>
-                <h2>Ürün Listesi</h2>
-                <div>
-                    <h4 style={{ display: "inline-block", marginRight: "10px" }}>Yeni Ürün Ekle :</h4>
-                    <button className="button" role="button">Ürün Ekle</button>
-                </div>
+function Header() {
+    const [content, setContent] = useState('');
 
-                <table>
-                    {/* Ürünler daha sonra veritabanından çekilecek*/}
-                    <tr>
-                        <th><h3>Product Id</h3></th>
-                        <th><h3>Product Name</h3></th>
-                        <th><h3>Price</h3></th>
-                        <th><h3>Stock</h3></th>
-                        <th><h3>Category Id</h3></th>
-                        <th><h3>Ürünü Güncelle</h3></th>
-                        <th><h3>Ürünü Sil</h3></th>
+    useEffect(() => {
+        // Feather ikonlarını yüklemek için
+        const feather = require('feather-icons');
+        feather.replace();
+        // Sayfa ilk açıldığında Home state'i çalışsın
+        Home();
+    }, []);
 
-                    </tr>
-                    {/* ÜRÜNLER VERİTABANINDAN GELECEK */}
-                    <tr>
-                        <td>1</td>
-                        <td>Desenli Tişört</td>
-                        <td>700</td>
-                        <td>200</td>
-                        <td>1</td>
-                        <td><button className="button" role="button">Güncelle</button></td>
-                        <td><button className="buttonDelete" role="button">Sil</button></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Desenli Pantolon</td>
-                        <td>1000</td>
-                        <td>400</td>
-                        <td>2</td>
-                        <td><button className="button" role="button">Güncelle</button></td>
-                        <td><button className="buttonDelete" role="button">Sil</button></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Şort</td>
-                        <td>500</td>
-                        <td>100</td>
-                        <td>3</td>
-                        <td><button className="button" role="button">Güncelle</button></td>
-                        <td><button className="buttonDelete" role="button">Sil</button></td>
-                    </tr>
-                </table>
-
-            </div>
-        )
+    const Home = () => {
+        setContent(<HomePage />);
     }
+
+    const showProduct = () => {
+        setContent(<Product />);
+    };
+
+    const showCustomer = () => {
+        setContent(<Customer />);
+    };
+    const showCategoriy = () => {
+        setContent(<Categoriy />);
+    };
+    return (
+        <div className='container'>
+            <div className="header2">
+                <nav className="navbar2">
+                    <ul className="navbar__menu2">
+                        <li className="navbar__item2">
+                            <a href="#" className="navbar__link2" onClick={Home}>
+                                <i data-feather="home"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li className="navbar__item2">
+                            <a href="#" className="navbar__link2" onClick={showProduct}>
+                                <i data-feather="message-square"></i>
+                                <span>Products</span>
+                            </a>
+                        </li>
+                        <li className="navbar__item2">
+                            <a href="#" className="navbar__link2" onClick={showCustomer}>
+                                <i data-feather="users"></i>
+                                <span>Customers</span>
+                            </a>
+                        </li>
+                        <li className="navbar__item2">
+                            <a href="#" className="navbar__link2" onClick={showCategoriy}>
+                                <i data-feather="folder"></i>
+                                <span>Categories</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <div>{content}</div>
+            </div>
+        </div>
+    );
 }
+
+export default Header;
