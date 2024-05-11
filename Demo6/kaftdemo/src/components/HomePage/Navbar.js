@@ -3,21 +3,31 @@ import '../../Css/main.css'; // CSS dosyasını import ettik
 import menuwhite from '../../images/menuwhite.png'; // menuwhite resmini import ettik
 import logoLight from '../../images/logo-light.svg'; // logo-light resmini import ettik
 import basketwhite from '../../images/basketwhite.png'; // basketwhite resmini import ettik
-
-
-
 import * as AiIcons from "react-icons/io";
 import { SidebarData } from './SidebarData';
 import '../../Css/Navbar.css';
 import MyModal from './LanguageSelect';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
+
+
+import LoginModal from '../HomePage/LoginModal';
 
 function Navbar() {
+
     const [sidebar, setSidebar] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const showSidebar = () => setSidebar(!sidebar);
-    return (
 
+    //giriş yap modal
+    const [showLoginModal, setShowLoginModal] = useState(false);
+
+    const toggleModal = () => {
+        setShowLoginModal(!showLoginModal);
+    };
+
+
+    return (
+     
             <div>
                 <div className='header' id="header">
                     <div className='menucontainer'>
@@ -32,7 +42,20 @@ function Navbar() {
                         <div className='menuitem logo'><a href='index.html'>
                             <img src={logoLight} alt="logo" /></a></div>
                         <div className='menuitem login-basket'>
-                            <div className='login' style={{ fontFamily: 'Font2' }}><a href="#">Giriş</a></div>
+
+
+
+
+                            <div className='login' style={{ fontFamily: 'Font2' }}>
+                                <a href="#" onClick={() => setShowLoginModal(true)}>Giriş Yap</a>
+
+                                {showLoginModal && (
+                                    <LoginModal
+                                        show={showLoginModal}
+                                        onClose={() => setShowLoginModal(false)}
+                                    />
+                                )}
+                            </div>
                             <div className='basket'><a href='#'>
                                 <img src={basketwhite} alt="basket" /></a></div>
                         </div>
@@ -142,7 +165,7 @@ function Navbar() {
                     </div>
                 </div>
             </div>
-      
+       
 
     );
 }
