@@ -4,7 +4,7 @@ import '../../Css/main.css';
 
 const Footer = () => {
   return (
-    <div>
+    <div style={{backgroundColor:'#d9dbcf'}}>
       <div style={{
         display: 'block',
         width: '100%',

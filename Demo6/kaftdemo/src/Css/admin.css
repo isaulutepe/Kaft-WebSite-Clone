@@ -24,14 +24,16 @@ body {
 
 /* ADMİN PAGE NAVBAR KODLARI */
 .header2 {
-    position: sticky;
-
+    position: fixed; /* Değişiklik burada */
+    top: 0; /* Sayfanın en üstünde sabitlenmesi için */
+    left: 0; /* Sayfanın solunda sabitlenmesi için */
+    width: 100%; /* Sayfanın genişliği kadar olması için */
+    z-index: 1000; /* Diğer içeriklerin üzerinde kalması için */
     background: rgba(0, 0, 0, 0.9);
     height: 6rem;
     display: flex;
     align-items: center;
     gap: 3rem;
-    
     
 }
 

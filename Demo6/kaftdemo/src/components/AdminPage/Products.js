@@ -1,9 +1,23 @@
 import React, { Component } from 'react'
+import { productData } from './productsData';
+
+
+const Titles = {
+  "productId": "Product Id",
+  "productName": "Product Name",
+  "price": "Price",
+  "stock": "Stock",
+  "categoryId": "Category Id",
+  "update": "Update Product",
+  "delete": "Delete Product"
+};
 
 export default class Products extends Component {
+
+
   render() {
     return (
-      <div style={{ margin: '5%' }}>
+      <div style={{ margin: '10%' }}>
         <h1>Admin Panel</h1>
         <h2>Products List</h2>
         <div>
@@ -13,44 +27,37 @@ export default class Products extends Component {
 
         <table>
           {/* Ürünler daha sonra veritabanından çekilecek*/}
-          <tr>
-            <th><h3>Product Id</h3></th>
-            <th><h3>Product Name</h3></th>
-            <th><h3>Price</h3></th>
-            <th><h3>Stock</h3></th>
-            <th><h3>Category Id</h3></th>
-            <th><h3>Update Product</h3></th>
-            <th><h3>Delete Product</h3></th>
-
-          </tr>
+          <thead>
+            <tr>
+              {Object.values(Titles).map((title) => (
+                <th key={title}>
+                  <h3>{title}</h3>
+                </th>
+              ))}
+            </tr>
+          </thead>
           {/* ÜRÜNLER VERİTABANINDAN GELECEK */}
-          <tr>
-            <td>1</td>
-            <td>Desenli Tişört</td>
-            <td>700</td>
-            <td>200</td>
-            <td>1</td>
-            <td><button className="button" role="button">Update</button></td>
-            <td><button className="buttonDelete" role="button">Delete</button></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Desenli Pantolon</td>
-            <td>1000</td>
-            <td>400</td>
-            <td>2</td>
-            <td><button className="button" role="button">Update</button></td>
-            <td><button className="buttonDelete" role="button">Delete</button></td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Şort</td>
-            <td>500</td>
-            <td>100</td>
-            <td>3</td>
-            <td><button className="button" role="button">Update</button></td>
-            <td><button className="buttonDelete" role="button">Delete</button></td>
-          </tr>
+          <tbody>
+            {productData.map((product) => (
+              <tr key={product.id}>
+                <td>{product.id}</td>
+                <td>{product.productName}</td>
+                <td>{product.price}</td>
+                <td>{product.stock}</td>
+                <td>{product.categoryId}</td>
+                <td>
+                  <button className="button" role="button">
+                    Update
+                  </button>
+                </td>
+                <td>
+                  <button className="buttonDelete" role="button">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
         </table>
 
       </div>
