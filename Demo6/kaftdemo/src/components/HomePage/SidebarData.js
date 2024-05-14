@@ -68,8 +68,8 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
-        title: "Tee Machine",
-        path: "/teemachine",
+        title: "Kampanyalı Ürünler",
+        path: "/kampanyaliurunler",
         icon: <AiIcons.AiFillHome />,
         cName: 'nav-text'
     },

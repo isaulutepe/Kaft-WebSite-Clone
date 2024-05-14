@@ -1,0 +1,35 @@
+
+.App {
+    text-align: center;
+  }
+  
+  .Navbar {
+    margin-bottom: 20px; /* Adjust as needed */
+  }
+
+  .Listeleme {
+    margin: 25vh 25vw ; /* Top, right, and left margins */
+    margin-top: 200px;
+  }
+  
+ 
+  
+  .Listeleme h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .Listeleme ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .Listeleme ul li {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .Listeleme p {
+    font-size: 50px;
+  }
+  
