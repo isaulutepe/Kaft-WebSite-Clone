@@ -50,17 +50,17 @@ function GiftCard() {
                 }}
             >
                 <br /><br /><br /><br /><br /><br /><br />
-                <div style={{ color: 'white', height: '5vh', width: '10%', marginLeft: '80px', marginTop: '20px', float: 'left' }}>
+                <div style={{ color: 'white', height: '5vh', width: '10%', marginLeft: '80px', marginTop: '20px',  textAlign: 'left' }}>
                     <h3>KAFT Gift Card</h3>
                 </div>
-                <div style={{ color: 'white', height: '20vh', width: '47%', marginLeft: '80px', marginTop: '20px', float: 'left' }}>
+                <div style={{ color: 'white', height: '20vh', width: '47%', marginLeft: '80px', marginTop: '20px',  textAlign: 'left' }}>
                     <h1>Sevdiğin birisi için yüzlerce tasarım ve bir o kadar hikaye arasından doğru olanı seçmekte zorlandığın anlar olabilir.</h1>
                 </div>
-                <div style={{ color: 'white', height: '15vh', width: '47%', marginLeft: '80px', marginTop: '20px', float: 'left' }}>
+                <div style={{ color: 'white', height: '15vh', width: '47%', marginLeft: '80px', marginTop: '20px',  textAlign: 'left' }}>
                     <h3>İşte böyle anlarda seçimi O’na bırakmak için bir KAFT GIFT CARD gönderebilirsin. Böylelikle KAFT dünyasından dilediği ürüne kendisi karar verebilir.</h3>
                 </div>
 
-                <div style={{ position: 'absolute', bottom: '70px', left: '10%', transform: 'translateX(-50%)', float: 'left' }}>
+                <div style={{ position: 'absolute', bottom: '70px', left: '10%', transform: 'translateX(-50%)',  textAlign: 'left' }}>
 
                     <button
                         className={scrolled ? 'scroll-button scrolled' : 'scroll-button'}
