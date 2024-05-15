@@ -6,6 +6,7 @@ import AdminPage from '../AdminPage';
 import Login from './HomePage/Login';
 import ContactPage from '../ContactPage';
 import KampanyaliUrunler from '../KampanyaliUrunler';
+import GiftCard from './HomePage/GiftCard';
 //import Login from '../HomePage/Login';
 // Diğer sayfalarınızı burada import edin
 
@@ -17,6 +18,7 @@ const RoutesComponent = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/iletisim" element={<ContactPage/>} />
             <Route path="/kampanyaliurunler" element={<KampanyaliUrunler/>} />
+            <Route path="/GiftCard" element={<GiftCard />} />
       {/* // Diğer rotalarınızı burada ekleyin */}
         </Routes>
     );

@@ -274,3 +274,21 @@ input[type="password"] {
 .navbargiris {
     font-family: 'Font2';
 }
+.login-buttongiftgiftcard {
+    display: inline-block;
+    width: 500px; 
+    padding: 19px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(59, 56, 56);
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+  }
+  
+  input[type="dategiftcard"] {
+    width: 500px;
+    height: 40px;
+  }
