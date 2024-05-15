@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Navbar from '../HomePage/Navbar';
 import Footer from '../HomePage/Footer';
-import '../../Css/Login.css';
+import '../../Css/GiftCard.css';
 import arkaplan from '../../images/hediyekartı.jpg';
 import resim1 from '../../images/giftcard_1.svg';
 import resim2 from '../../images/giftcard_2.svg';
