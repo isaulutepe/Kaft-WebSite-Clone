@@ -1,0 +1,18 @@
+.login-buttongiftgiftcard {
+    display: inline-block;
+    width: 500px; 
+    padding: 19px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(59, 56, 56);
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+  }
+  
+  input[type="date"] {
+    width: 500px;
+    height: 40px;
+  }
