@@ -60,7 +60,7 @@ function GiftCard() {
                     <h3>İşte böyle anlarda seçimi O’na bırakmak için bir KAFT GIFT CARD gönderebilirsin. Böylelikle KAFT dünyasından dilediği ürüne kendisi karar verebilir.</h3>
                 </div>
 
-                <div style={{ position: 'absolute', bottom: '70px', left: '10%', transform: 'translateX(-50%)',  textAlign: 'left' }}>
+                <div style={{ position: 'absolute', bottom: '70px', left: '12%', transform: 'translateX(-50%)',  textAlign: 'left' }}>
 
                     <button
                         className={scrolled ? 'scroll-button scrolled' : 'scroll-button'}
@@ -130,7 +130,7 @@ function GiftCard() {
 
                     <div>
                         <input
-                            type="dategiftcard"
+                            type="date"
                             value={selectedDate}
                             onChange={handleDateChange}
                             style={{ marginBottom: '20px' }}

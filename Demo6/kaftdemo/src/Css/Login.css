@@ -288,7 +288,7 @@ input[type="password"] {
     cursor: pointer;
   }
   
-  input[type="dategiftcard"] {
+  input[type="date"] {
     width: 500px;
     height: 40px;
   }
