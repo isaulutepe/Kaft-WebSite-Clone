@@ -9,6 +9,8 @@ import KampanyaliUrunler from '../KampanyaliUrunler';
 import GiftCard from './HomePage/GiftCard';
 //import Login from '../HomePage/Login';
 // Diğer sayfalarınızı burada import edin
+import TisortPage from '../TisortPage';
+
 
 const RoutesComponent = () => {
     return (       
@@ -19,6 +21,8 @@ const RoutesComponent = () => {
             <Route path="/iletisim" element={<ContactPage/>} />
             <Route path="/kampanyaliurunler" element={<KampanyaliUrunler/>} />
             <Route path="/GiftCard" element={<GiftCard />} />
+            <Route path="/tisort" element={<TisortPage />} />
+
       {/* // Diğer rotalarınızı burada ekleyin */}
         </Routes>
     );
