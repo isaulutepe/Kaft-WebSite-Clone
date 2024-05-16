@@ -25,12 +25,12 @@ function LoginModal({ onClose, show, toggleModal }) {
         <br />  <br />  <br />
         <form>
           {/* Kullanıcı adı */}
-          <label htmlFor="username" className="labelgiriş">E-posta</label><br />
-          <input type="text" id="username" name="username" className="input" /><br />
+          <label htmlFor="username" className="labelgiriş">E-posta</label><br /><br />
+          <input type="texti" id="username" name="username" className="input" /><br />
 
           {/* Şifre */}
-          <label htmlFor="password" className="labelgiriş">Şifre</label><br />
-          <input type="password" id="password" name="password" className="input" /><br /><br />
+          <label htmlFor="password" className="labelgiriş">Şifre</label><br /><br />
+          <input type="ipassword" id="password" name="password" className="input" /><br /><br />
 
           {/* "Beni Hatırla" metni */}
           <input type="checkbox" id="rememberMe" name="rememberMe" />

@@ -141,9 +141,9 @@ input[type="şifre"] {
 /*üye ol fecebok ile giriş google ile giriş */
 
 
-input[type="text"],
+input[type="texti"],
 input[type="email"],
-input[type="password"] {
+input[type="ipassword"] {
     background-color: #ddd;
     width: calc(100% - 160px);
     padding: 15px;
@@ -273,4 +273,7 @@ input[type="password"] {
 
 .navbargiris {
     font-family: 'Font2';
+}
+.giriş-yazı {
+    float: left;
 }

@@ -36,23 +36,23 @@ const Login = () => {
         <div className="wrapper">
           <div className="item">
             <h3>Yeni Üyelik</h3><br />
-            <label htmlFor="adın">Adın</label><br />
-            <input type="text" id="adın" name="adın" /><br /><br />
+            <label htmlFor="adın"className="giriş-yazı">Adın</label><br />
+            <input type="adın" id="adın" name="adın" /><br /><br />
 
-            <label htmlFor="soyad">Soyadın</label><br />
-            <input type="text" id="soyad" name="soyad" /><br /><br />
+            <label htmlFor="soyad"className="giriş-yazı">Soyadın</label><br />
+            <input type="soyad" id="soyad" name="soyad" /><br /><br />
 
-            <label htmlFor="posta">E-posta Adresin</label><br />
-            <input type="email" id="posta" name="posta" /><br /><br />
+            <label htmlFor="posta"className="giriş-yazı">E-posta Adresin</label><br />
+            <input type="posta" id="posta" name="posta" /><br /><br />
 
-            <label htmlFor="şifre">Şifren</label><br />
-            <input type="password" id="şifre" name="şifre" /><br /><br />
+            <label htmlFor="şifre"className="giriş-yazı">Şifren</label><br />
+            <input type="şifre" id="şifre" name="şifre" /><br /><br />
 
-            <label htmlFor="şifreTekrar">Şifren (tekrar)</label><br />
-            <input type="password" id="şifreTekrar" name="şifreTekrar" /><br /><br />
+            <label htmlFor="şifreTekrar"className="giriş-yazı">Şifren (tekrar)</label><br />
+            <input type="şifre" id="şifreTekrar" name="şifreTekrar" /><br /><br />
 
             <input type="checkbox" id="rememberMe1" name="rememberMe1" />
-            <label htmlFor="rememberMe1">KAFT tarafından iletişim bilgilerime tanıtım, reklam, kampanya vb.
+            <label htmlFor="rememberMe1" >KAFT tarafından iletişim bilgilerime tanıtım, reklam, kampanya vb.
               içerikli ticari e-ileti gönderilmesine, sağladığım kişisel verilerin Kişisel Verilerin
               Korunmasına İlişkin Aydınlatma Metni kapsamında bu amaçla işlenmesine ve hizmet sağlayıcılara
               aktarılmasına izin veriyorum.</label><br /><br />
