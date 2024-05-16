@@ -10,6 +10,7 @@ import GiftCard from './HomePage/GiftCard';
 //import Login from '../HomePage/Login';
 // Diğer sayfalarınızı burada import edin
 import TisortPage from '../TisortPage';
+import Basket from './HomePage/Basket';
 
 
 const RoutesComponent = () => {
@@ -22,6 +23,7 @@ const RoutesComponent = () => {
             <Route path="/kampanyaliurunler" element={<KampanyaliUrunler/>} />
             <Route path="/GiftCard" element={<GiftCard />} />
             <Route path="/tisort" element={<TisortPage />} />
+            <Route path="/Basket" element={<Basket />} />
 
       {/* // Diğer rotalarınızı burada ekleyin */}
         </Routes>

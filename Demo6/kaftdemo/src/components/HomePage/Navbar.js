@@ -58,8 +58,12 @@ function Navbar() {
                                 />
                             )}
                         </div>
-                        <div className='basket'><a href='#'>
-                            <img src={basketwhite} alt="basket" /></a></div>
+                        <Link to='/Basket'>
+                            <div className='basket'><a href='#'>
+                                <img src={basketwhite} alt="basket" /></a></div>
+                        </Link>
+
+
                     </div>
 
                     <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
