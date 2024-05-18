@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { customerData } from './customerData';
+import { usersData } from './customerData';
+import { Link } from 'react-router-dom'; // Link componentini ekleyin
 
 const Titles = {
     userid: 'User ID',
     name: 'Name',
     surname: 'Surname',
     eposta: 'Eposta',
+    adressId:"Adress Id",
     date: 'Date Of Registration',
     update: 'Update User',
     delete: 'Delete User',
@@ -37,17 +39,21 @@ class Customer extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {customerData.map((customer) => (
-                            <tr key={customer.id}>
-                                <td>{customer.id}</td>
-                                <td>{customer.name}</td>
-                                <td>{customer.surname}</td>
-                                <td>{customer.eposta}</td>
-                                <td>{customer.date}</td>
+                        {usersData.map((user) => (
+                            <tr key={user.id}>
+                                <td>{user.id}</td>
+                                <td>{user.name}</td>
+                                <td>{user.surname}</td>
+                                <td>{user.eposta}</td>
+                                <td>{user.adressId}</td>
+                                <td>{user.date}</td>
                                 <td>
-                                    <button className="button" role="button">
-                                        Update
-                                    </button>
+                                    <Link to={`/admin/update/customer/${user.id}`}>
+
+                                        <button className="button" role="button">
+                                            Update
+                                        </button>
+                                    </Link>
                                 </td>
                                 <td>
                                     <button className="buttonDelete" role="button">

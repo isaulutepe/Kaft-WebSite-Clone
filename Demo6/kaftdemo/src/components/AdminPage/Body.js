@@ -3,6 +3,8 @@ import HomePage from './Home';
 import Product from './Products';
 import Customer from './Customers'
 import Categoriy from './Categories';
+import Adress from './Adress';
+
 import '../../Css/admin.css';
 
 function Header() {
@@ -29,6 +31,9 @@ function Header() {
     };
     const showCategoriy = () => {
         setContent(<Categoriy />);
+    };
+    const showAdress = () => {
+        setContent(<Adress />);
     };
     return (
         <div className='container'>
@@ -57,6 +62,12 @@ function Header() {
                             <a href="#" className="navbar__link2" onClick={showCategoriy}>
                                 <i data-feather="folder"></i>
                                 <span>Categories</span>
+                            </a>
+                        </li>
+                        <li className="navbar__item2">
+                            <a href="#" className="navbar__link2" onClick={showAdress}>
+                                <i data-feather="compass"></i>
+                                <span>Adress</span>
                             </a>
                         </li>
                     </ul>

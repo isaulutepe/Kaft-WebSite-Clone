@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { productData } from './productsData';
+import { Link } from 'react-router-dom'; // Link componentini ekleyin
 
 
 const Titles = {
@@ -46,9 +47,11 @@ export default class Products extends Component {
                 <td>{product.stock}</td>
                 <td>{product.categoryId}</td>
                 <td>
-                  <button className="button" role="button">
-                    Update
-                  </button>
+                  <Link to={`/admin/update/product/${product.id}`}>
+                    <button className="button" role="button">
+                      Update
+                    </button>
+                  </Link>
                 </td>
                 <td>
                   <button className="buttonDelete" role="button">

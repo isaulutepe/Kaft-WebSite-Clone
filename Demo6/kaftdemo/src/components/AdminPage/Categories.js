@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { categorydata } from './categoryData';
+import { Link } from 'react-router-dom'; // Link componentini ekleyin
+
 
 const Titles =
 {
@@ -35,9 +37,11 @@ export default class Body extends Component {
                                 <td>{category.id}</td>
                                 <td>{category.categoryName}</td>
                                 <td>
-                                    <button className="button" role="button">
-                                        Update
-                                    </button>
+                                    <Link to={`/admin/update/category/${category.id}`}>
+                                        <button className="button" role="button">
+                                            Update
+                                        </button>
+                                    </Link>
                                 </td>
                                 <td>
                                     <button className="buttonDelete" role="button">
