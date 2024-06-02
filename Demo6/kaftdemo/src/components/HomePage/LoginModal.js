@@ -20,7 +20,7 @@ function LoginModal({ onClose, show, toggleModal }) {
       <div className="login-modal-content">
         <span className="close" onClick={onClose}>&times;</span>
       
-        <h3 style={{ color: 'black', float: 'left', marginRight: '580px', fontFamily: 'Font1' }}>Üyelik</h3>
+        <h3 style={{ color: 'black', float: 'left', marginRight: '580px', fontFamily: 'Font1',marginTop:'-25px' }}>Üyelik</h3>
         <br></br>
         
         {/* Giriş yap formu */}
