@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Fullpage, { FullPageSections, FullpageSection } from '@ap.cx/react-fullpage'
 import '../../Css/main.css';
 import video from '../../images/668.mp4'
+import { Link } from 'react-router-dom';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -339,7 +340,7 @@ export default class App extends Component {
                                     <tr>
                                         <td><a href='#'>Ceket</a></td>
                                         <td></td>
-                                        <td><a href='#'>Hediye Kartı</a></td>
+                                        <td><Link to="/GiftCard">Hediye Kartı</Link></td>
                                         <td><a href='#'>İşlem Rehberi</a></td>
                                     </tr>
                                     <tr>
