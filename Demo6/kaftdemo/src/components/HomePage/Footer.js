@@ -1,10 +1,10 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import '../../Css/main.css';
 
 const Footer = () => {
   return (
-    <div style={{backgroundColor:'#d9dbcf'}}>
+    <div style={{ backgroundColor: '#d9dbcf' }}>
       <div style={{
         display: 'block',
         width: '100%',
@@ -69,7 +69,7 @@ const Footer = () => {
             <tr>
               <td><a href='#'>Ceket</a></td>
               <td></td>
-              <td><a href='#'>Hediye Kartı</a></td>
+              <td><Link to="/GiftCard">Hediye Kartı</Link></td>
               <td><a href='#'>İşlem Rehberi</a></td>
             </tr>
             <tr>

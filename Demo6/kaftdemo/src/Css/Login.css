@@ -11,28 +11,149 @@
 
 }
 
-.modal-content-wrapper {
+.login-modal-content-wrapper {
     display: grid;
     grid-template-rows: auto;
-    /* Modal'ı tam ekran yüksekliğine getir */
-    align-items: center;
+
+    align-items: flex-start;
     justify-content: center;
 }
 
-.modal-content {
+.login-modal-content {
     background-color: #fefefe;
     display: flex;
-    margin: 5% auto;
     flex-direction: column;
-    align-items: center;
     justify-content: flex-start;
     width: 100%;
-    max-width: 500px;
-    padding: 0px;
+    max-width: 650PX;
     background-color: #fff;
     border-radius: 0px;
+    padding-left: 30px;
+
 }
 
+/* Kapat düğmesi için stiller */
+.close {
+    color: black;
+    float: left;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 5px;
+
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input[type="texti"],
+input[type="email"],
+input[type="ipassword"] {
+    background-color: #ddd;
+    width: calc(100%-280px);
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+
+
+}
+
+.şifreyiunuttum {
+
+    text-decoration: underline;
+    float: right;
+    color: black !important;
+    margin-left: 450px;
+
+}
+
+.square-button {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.square-button button,
+.square-button a {
+    padding: 20px 45px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(59, 56, 56);
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    width: auto;
+    display: inline-block;
+    margin-right: 3px;
+}
+
+
+
+.square-button button:hover,
+.square-button a:hover {
+    background-color: rgb(59, 56, 56);
+}
+
+.square-button:nth-child(2) button,
+.square-button:nth-child(2) a {
+    background-color: #ccc;
+    color: rgb(59, 56, 56);
+}
+
+.labelgiriş {
+    font-family: 'Font1';
+    color: black;
+    float: left;
+    margin-right: 580px;
+
+}
+
+.irememberLabel {
+    color: black;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+    margin-top:-32px;
+    margin-right: 500px;
+
+}
+
+.irememberMe {
+    margin-right: 610px;
+}
+
+.girişyapbutton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ccc;
+    color: rgb(59, 56, 56);
+    text-decoration: none;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 16px;
+    float: right;
+}
+
+
+/* Giriş yap */
+
+.rememberMe2{
+    margin-right: 610px;
+}
+.rememberMe1{
+    margin-right: 610px;
+}
+.rememberLabel1{
+margin-top: -22px;
+float: left;
+margin-left: 12px;
+}
 .img-figure {
 
     float: right;
@@ -89,25 +210,6 @@ input[type="şifre"] {
 
 }
 
-
-
-/* Kapat düğmesi için stiller */
-.close {
-    color: black;
-    float: left;
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 10px;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/*giriş */
 .login-button {
     display: inline-block;
     padding: 19px 250px;
@@ -119,11 +221,19 @@ input[type="şifre"] {
     border: none;
     border-radius: 0px;
     cursor: pointer;
+
 }
 
 .login-button:hover {
     background-color: #333;
 }
+
+
+
+
+
+/*giriş */
+
 
 /* üyelik formu */
 
@@ -141,50 +251,10 @@ input[type="şifre"] {
 /*üye ol fecebok ile giriş google ile giriş */
 
 
-input[type="texti"],
-input[type="email"],
-input[type="ipassword"] {
-    background-color: #ddd;
-    width: calc(100% - 160px);
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 0px;
-
-}
 
 /* Metin etiketlerinin stil tanımı */
 
-.labelgiriş {
-    font-family: 'Font1';
-    color: black;
-    float: left;
-    margin-left: 70px;
-}
-.rememberLabel {
-    color: black; /* Siyah renk */
-    float: left;
-}
-#rememberMe {
-    float: left;
-    margin-left: 62px;
-    margin-right: 5px;
-    margin-top: 5px;
 
-}
-
-.girişyapbutton {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ccc;
-    color: rgb(59, 56, 56);
-    text-decoration: none;
-    border: none;
-    border-radius: 0px;
-    cursor: pointer;
-    font-size: 16px;
-    float: right;
-}
 
 
 .kaftaüyeol {
@@ -200,52 +270,14 @@ input[type="ipassword"] {
 
 
 
-.square-button {
-    display: inline-block;
-    margin-right: 5px;
-}
 
-.square-button button,
-.square-button a {
-    padding: 20px 33px;
-    font-size: 20px;
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
-    background-color: rgb(59, 56, 56);
-    border: none;
-    border-radius: 0px;
-    cursor: pointer;
-    width: auto;
-    display: inline-block;
-    margin-right: 3px;
-}
-
-
-
-.square-button button:hover,
-.square-button a:hover {
-    background-color: rgb(59, 56, 56);
-}
-
-.square-button:nth-child(2) button,
-.square-button:nth-child(2) a {
-    background-color: #ccc;
-    color: rgb(59, 56, 56);
-}
 
 .Hoşgeldin {
     text-align: center;
     font-size: 6em;
 }
 
-.şifreyiunuttum {
-    
-    text-decoration: underline;
-    float: right;
-    color: black !important; 
-    margin-right: 80px;
-}
+
 
 .üyeliğimvar {
     display: inline-block;
@@ -253,7 +285,7 @@ input[type="ipassword"] {
     margin-top: -25px;
     margin-right: 10px;
     color: #333;
-} 
+}
 
 .girişyaplogo {
     text-align: center;
@@ -274,6 +306,7 @@ input[type="ipassword"] {
 .navbargiris {
     font-family: 'Font2';
 }
+
 .giriş-yazı {
     float: left;
 }

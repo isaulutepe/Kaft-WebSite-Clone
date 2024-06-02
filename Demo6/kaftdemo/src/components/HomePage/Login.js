@@ -51,14 +51,16 @@ const Login = () => {
             <label htmlFor="şifreTekrar"className="giriş-yazı">Şifren (tekrar)</label><br />
             <input type="şifre" id="şifreTekrar" name="şifreTekrar" /><br /><br />
 
-            <input type="checkbox" id="rememberMe1" name="rememberMe1" />
-            <label htmlFor="rememberMe1" >KAFT tarafından iletişim bilgilerime tanıtım, reklam, kampanya vb.
+            <input type="checkbox" id="rememberMe1" className="rememberMe1" />
+            <label htmlFor="rememberMe1" className="rememberLabel1" >KAFT tarafından iletişim bilgilerime tanıtım, reklam, kampanya vb.
               içerikli ticari e-ileti gönderilmesine, sağladığım kişisel verilerin Kişisel Verilerin
               Korunmasına İlişkin Aydınlatma Metni kapsamında bu amaçla işlenmesine ve hizmet sağlayıcılara
-              aktarılmasına izin veriyorum.</label><br /><br />
+              aktarılmasına izin veriyorum.</label><br /><br /><br /><br /><br /><br />
 
-            <input type="checkbox" id="rememberMe2" name="rememberMe2" />
-            <label htmlFor="rememberMe2"> Üyelik Sözleşmesi'ni okudum, onaylıyorum. </label><br /><br />
+
+
+            <input type="checkbox" id="rememberMe2" className="rememberMe2" />
+            <label htmlFor="rememberMe2" className="rememberLabel1"> Üyelik Sözleşmesi'ni okudum, onaylıyorum. </label><br /><br /><br /><br />
 
             <p>Üyeliğiniz sırasında elde edilen kişisel verileriniz, Kişisel Verilerin Korunmasına İlişkin
               Aydınlatma Metni kapsamında işlenmektedir.</p>

@@ -19,24 +19,28 @@ function LoginModal({ onClose, show, toggleModal }) {
     <div className="login-modal">
       <div className="login-modal-content">
         <span className="close" onClick={onClose}>&times;</span>
-        <br />
-        <h3 style={{color: 'black', float: 'left', marginLeft: '10px', fontFamily: 'Font1'}}>Üyelik</h3>
+      
+        <h3 style={{ color: 'black', float: 'left', marginRight: '580px', fontFamily: 'Font1' }}>Üyelik</h3>
+        <br></br>
+        
         {/* Giriş yap formu */}
-        <br />  <br />  <br />
+
         <form>
           {/* Kullanıcı adı */}
-          <label htmlFor="username" className="labelgiriş">E-posta</label><br /><br />
-          <input type="texti" id="username" name="username" className="input" /><br />
+          <label htmlFor="username" className="labelgiriş">E-posta</label>
+          <input type="texti" id="username" name="username" className="input" />
+         
 
           {/* Şifre */}
-          <label htmlFor="password" className="labelgiriş">Şifre</label><br /><br />
-          <input type="ipassword" id="password" name="password" className="input" /><br /><br />
+          <label htmlFor="password" className="labelgiriş">Şifre</label>
+          <input type="ipassword" id="password" name="password" className="input" />
+          
 
           {/* "Beni Hatırla" metni */}
-          <input type="checkbox" id="rememberMe" name="rememberMe" />
-          <label htmlFor="rememberMe" className="rememberLabel">Beni Hatırla</label>
+          <input type="checkbox" id="rememberMe" className="irememberMe" />
+          <label htmlFor="rememberMe" className="irememberLabel">Beni Hatırla</label>
 
-          <a href="#" className="şifreyiunuttum">Şifremi Unuttum</a><br /><br />
+          <a href="#" className="şifreyiunuttum">Şifremi Unuttum</a>
           <input type="submit" value="Giriş Yap" className="login-button" />
 
         </form>

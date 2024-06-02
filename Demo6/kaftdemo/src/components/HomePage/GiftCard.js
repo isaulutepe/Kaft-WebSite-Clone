@@ -8,6 +8,7 @@ import resim2 from '../../images/giftcard_2.svg';
 import resim3 from '../../images/giftcard_3.svg';
 import resim4 from '../../images/giftcard_4.svg';
 import seç from '../../images/seç.png';
+import Modal from '../HomePage/GiftCardModal';
 
 
 function GiftCard() {
@@ -137,12 +138,7 @@ function GiftCard() {
                             ref={dateInputRef}
                         />
                     </div><br></br><br></br>
-
-
-
-                    <button onClick={handleButtonClick} className="login-buttongiftgiftcard">
-                        devam et
-                    </button>
+                    <Modal/>
                 </div>
             </div>
             <Footer />
