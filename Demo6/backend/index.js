@@ -14,12 +14,12 @@ const port = 3001;
 
 // CORS'u etkinleştirme
 app.use(cors());
+app.use(express.json());
 
 app.use('/api/users', userRoutes);    // /api/users ile kullanıcı rotalarını tanımlar
 app.use('/api/products', productRoutes); // /api/products ile ürün rotalarını tanımlar
 app.use('/api/categories', categoryRoutes); // /api/categories ile kategorri rotalarını tanımlar
 app.use('/api/adresses', adressRoutes); // /api/adresses ile adres rotalarını tanımlar
-
 
 
 app.listen(port, () => {

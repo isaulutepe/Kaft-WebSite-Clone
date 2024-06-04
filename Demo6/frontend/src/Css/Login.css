@@ -49,9 +49,9 @@
     cursor: pointer;
 }
 
-input[type="texti"],
+input[type="text"],
 input[type="email"],
-input[type="ipassword"] {
+input[type="password"] {
     background-color: #ddd;
     width: calc(100%-280px);
     padding: 15px;

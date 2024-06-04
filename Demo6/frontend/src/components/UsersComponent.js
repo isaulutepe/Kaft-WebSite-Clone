@@ -8,7 +8,6 @@ const Titles = {
     name: 'Name',
     surname: 'Surname',
     eposta: 'Eposta',
-    adressId: "Adress Id",
     date: 'Date Of Registration',
     update: 'Update User',
     delete: 'Delete User',
@@ -52,15 +51,14 @@ const UsersComponent = () => {
                 </thead>
                 <tbody>
                     {users.map((user) => (
-                        <tr key={user.UserID}>
-                            <td>{user.UserID}</td>
+                        <tr key={user.ID}>
+                            <td>{user.ID}</td>
                             <td>{user.Name}</td>
                             <td>{user.Surname}</td>
-                            <td>{user.Eposta}</td>
-                            <td>{user.AdressID}</td>
+                            <td>{user.Email}</td>
                             <td>{user.DateOfRegistration}</td>
                             <td>
-                                <Link to={`/admin/update/customer/${user.UserID}`}>
+                                <Link to={`/admin/update/customer/${user.ID}`}>
                                     <button className="button" role="button">
                                         Update
                                     </button>

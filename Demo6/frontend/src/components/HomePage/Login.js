@@ -8,75 +8,93 @@ import resim3 from '../../images/resim3.png';
 import resim4 from '../../images/resim4.png';
 import resim5 from '../../images/resim5.png';
 import Footer from '../HomePage/Footer.js';
-
-
-
+import userService from '../../services/userService.js';
 
 const Login = () => {
   const [modalOpen, setModalOpen] = useState(false);
-
   const toggleModal = () => {
     setModalOpen(!modalOpen);
   };
 
-  // Modal dışına tıklandığında modalı kapat <img src={menuwhite}
-  const closeModal = () => {
-    setModalOpen(false);
+  const [name, setName] = useState('');
+  const [surname, setSurname] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordRepeat, setPasswordRepeat] = useState('');
+  const [dateOfRegistration, setDateOfRegistration] = useState('');
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (password !== passwordRepeat) {
+      alert('Passwords do not match');
+      return;
+    }
+    if (!name || !surname || !email || !password || !dateOfRegistration) {
+      alert('All fields are required');
+      return;
+    }
+    try {
+      const userData = { name, surname, email, password, dateOfRegistration };
+      await userService.createUser(userData);
+      alert('User created successfully');
+      setName('');
+      setSurname('');
+      setEmail('');
+      setPassword('');
+      setPasswordRepeat('');
+      setDateOfRegistration('');
+    } catch (error) {
+      console.error('Error creating user:', error);
+      alert('Error creating user');
+    }
   };
 
   return (
     <div>
-     <Navbar/>
+      <Navbar />
       <div className="bg section s9">
         <div className="Hoşgeldin">
           <br /><br />
           HOŞ GELDİN
         </div>
-        <div className="headertextS9"></div>
+
         <div className="wrapper">
           <div className="item">
             <h3>Yeni Üyelik</h3><br />
-            <label htmlFor="adın"className="giriş-yazı">Adın</label><br />
-            <input type="adın" id="adın" name="adın" /><br /><br />
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="name" className="giriş-yazı">Adın</label>
+              <input type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
 
-            <label htmlFor="soyad"className="giriş-yazı">Soyadın</label><br />
-            <input type="soyad" id="soyad" name="soyad" /><br /><br />
+              <label htmlFor="surname" className="giriş-yazı">Soyadın</label>
+              <input type="text" id="surname" name="surname" value={surname} onChange={(e) => setSurname(e.target.value)} />
 
-            <label htmlFor="posta"className="giriş-yazı">E-posta Adresin</label><br />
-            <input type="posta" id="posta" name="posta" /><br /><br />
+              <label htmlFor="email" className="giriş-yazı">E-posta Adresin</label>
+              <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
 
-            <label htmlFor="şifre"className="giriş-yazı">Şifren</label><br />
-            <input type="şifre" id="şifre" name="şifre" /><br /><br />
+              <label htmlFor="password" className="giriş-yazı">Şifren</label>
+              <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
 
-            <label htmlFor="şifreTekrar"className="giriş-yazı">Şifren (tekrar)</label><br />
-            <input type="şifre" id="şifreTekrar" name="şifreTekrar" /><br /><br />
+              <label htmlFor="passwordRepeat" className="giriş-yazı">Şifren(tekrar)</label>
+              <input type="password" id="passwordRepeat" name="passwordRepeat" value={passwordRepeat} onChange={(e) => setPasswordRepeat(e.target.value)} />
 
-            <input type="checkbox" id="rememberMe1" className="rememberMe1" />
-            <label htmlFor="rememberMe1" className="rememberLabel1" >KAFT tarafından iletişim bilgilerime tanıtım, reklam, kampanya vb.
-              içerikli ticari e-ileti gönderilmesine, sağladığım kişisel verilerin Kişisel Verilerin
-              Korunmasına İlişkin Aydınlatma Metni kapsamında bu amaçla işlenmesine ve hizmet sağlayıcılara
-              aktarılmasına izin veriyorum.</label><br /><br /><br /><br /><br /><br />
+              <label htmlFor="dateOfRegistration" className="giriş-yazı">Kayıt Tarihi</label>
+              <input type="date" id="dateOfRegistration" name="dateOfRegistration" value={dateOfRegistration} onChange={(e) => setDateOfRegistration(e.target.value)} />
 
+              <input type="checkbox" id="rememberMe1" className="rememberMe1" />
+              <label htmlFor="rememberMe1" className="rememberLabel1">KAFT tarafından iletişim bilgilerime tanıtım, reklam, kampanya vb. içerikli ticari e-ileti gönderilmesine, sağladığım kişisel verilerin Kişisel Verilerin Korunmasına İlişkin Aydınlatma Metni kapsamında bu amaçla işlenmesine ve hizmet sağlayıcılara aktarılmasına izin veriyorum.</label>
 
+              <input type="checkbox" id="rememberMe2" className="rememberMe2" />
+              <label htmlFor="rememberMe2" className="rememberLabel1"> Üyelik Sözleşmesi'ni okudum, onaylıyorum. </label>
 
-            <input type="checkbox" id="rememberMe2" className="rememberMe2" />
-            <label htmlFor="rememberMe2" className="rememberLabel1"> Üyelik Sözleşmesi'ni okudum, onaylıyorum. </label><br /><br /><br /><br />
-
-            <p>Üyeliğiniz sırasında elde edilen kişisel verileriniz, Kişisel Verilerin Korunmasına İlişkin
-              Aydınlatma Metni kapsamında işlenmektedir.</p>
-            <br />
-            <br />
-            <button className="kaftaüyeol">KAFT'a Üye ol</button><br /><br />
-
+              <p>Üyeliğiniz sırasında elde edilen kişisel verileriniz, Kişisel Verilerin Korunmasına İlişkin Aydınlatma Metni kapsamında işlenmektedir.</p>
+              <br />
+              <br />
+              <button type="submit" className="kaftaüyeol">KAFT'a Üye ol</button><br /><br />
+            </form>
             <a href="#" className="girişyapbutton" onClick={toggleModal}>Giriş yap</a><br /><br />
 
             <span className="üyeliğimvar">Daha önceden üyeliğim var</span>
-
-
-
           </div>
-
-
 
           <div className="item">
             <figure className="girişyaplogo">
@@ -137,19 +155,15 @@ const Login = () => {
                 </tr>
               </tbody>
             </table>
-
-
           </div>
         </div>
         <div style={{
-        display: 'block',
-        width: '100%',
-        height: '20vh'
-      }}></div>
+          display: 'block',
+          width: '100%',
+          height: '20vh'
+        }}></div>
       </div>
-      
       <Footer />
-
     </div>
   );
 };

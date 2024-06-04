@@ -6,6 +6,10 @@ const getUsers = () => {
     return axios.get(`${API_URL}/users`);
 };
 
+const createUser = (user) => {
+    return axios.post(`${API_URL}/users`, user);
+};
 export default {
-    getUsers
+    getUsers,
+    createUser
 };
