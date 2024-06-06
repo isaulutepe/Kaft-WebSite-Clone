@@ -5,8 +5,7 @@
 *.md
 
 # Node.js modules
-Demo6/backend/node_modules/
-
+/Demo6/frontend/node_modules
 # Pack files
 *.pack
 
@@ -14,3 +13,4 @@ Demo6/backend/node_modules/
 *.pdf
 
 *.docx
+
