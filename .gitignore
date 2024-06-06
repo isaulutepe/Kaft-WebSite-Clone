@@ -1,0 +1,16 @@
+# Visual Studio user-specific files
+*.suo
+
+# Markdown files
+*.md
+
+# Node.js modules
+Demo6/backend/node_modules/
+
+# Pack files
+*.pack
+
+
+*.pdf
+
+*.docx
