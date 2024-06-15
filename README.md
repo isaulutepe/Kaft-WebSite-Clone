@@ -5,36 +5,18 @@ KAFT, tasarım odaklı bir e-ticaret platformudur. Amacımız, kullanıcıların
 
 **Referans Uygulama:** https://www.kaft.com/
 
+**Uygulama Adresi:
+
 **Grup adı:** Kaft Grup
 
 **Proje Ekibi:** Engin Gül, İrem Maydan, İsa Ulutepe, Sena Yıldız
 
-# GEREKSİNİMLER
-<a href="https://github.com/isaulutepe/Kaft-WebSite-Clone/blob/main/%C4%B0sa_Ulutepe_Gereksinimler.md">İsa Ulutepe Gereksinimler</a>
-
-<a href="https://github.com/isaulutepe/Kaft-WebSite-Clone/blob/main/İrem_Maydan_Gereksinimler.md">İrem Maydan Gereksinimler</a>
-
-<a href="https://github.com/isaulutepe/Kaft-WebSite-Clone/blob/main/Sena_Y%C4%B1ld%C4%B1z_Gereksinimler.md">Sena Yıldız Gereksinimler</a>
-
-<a href="https://github.com/isaulutepe/Kaft-WebSite-Clone/blob/main/Engin_GUL_Gereksinimler.md">Engin GÜL Gereksinimler</a>
-
-# KULLANICI SENARYOLARI
-[Engin GÜL Kullanıcı Senaryosu](https://github.com/isaulutepe/Kaft-WebSite-Clone/files/14853599/EnginGulKullaniciSenaryosu.pdf)
-
-
-[İsa-Ulutepe-Kullanıcı-Senaryosu.pdf](https://github.com/isaulutepe/Kaft-WebSite-Clone/files/14951870/Isa-Ulutepe-Kullanici-Senaryosu.pdf)
-
-[Sena Yıldız Kullanıcı Senaryosu](https://github.com/isaulutepe/Kaft-WebSite-Clone/blob/main/Sena%20Y%C4%B1ld%C4%B1z%20Durum%20Senaryosu.pdf)
-
-[irem Maydan Kullanıcı Senaryosu](https://github.com/isaulutepe/Kaft-WebSite-Clone/blob/main/%C4%B0remMaydanDurumSeneryosu.pdf)
-
-![image](https://github.com/isaulutepe/Kaft-WebSite-Clone/assets/111301580/bfa9221c-016f-4ba1-9b89-d25a682ddf41)
-
-# VERİTABANI DİYAGRAMI
-
-![Veritabanı Diyagrami](https://github.com/isaulutepe/Kaft-WebSite-Clone/assets/114800514/f43cf848-623f-406b-9b64-5cc960e2c7a6)
-
-# DURUM DİYAGRAMI
-
-![Durum Diyagrami](https://github.com/isaulutepe/Kaft-WebSite-Clone/blob/main/Durum%20Diyagram%C4%B1.png)
-
+1. [Proje Planı](Proje-Planı.md)
+2. [Gereksinim Analizi](gereksinim-analizi.md)
+3. [Durum Diyagramı](Durum-Diyagramı.md)
+4. [Durum Senaryoları](Durum-Senaryoları.md)
+5. [Veritabanı Diyagramı](Veritabanı-Diyagramı.md)
+6. [Front-End](Front-End.md)
+7. [Back-End](Back-End.md)
+8. Test
+9. Geliştirici Ve Kullanıcı Dökümantasyonları
