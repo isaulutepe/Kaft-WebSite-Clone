@@ -32,6 +32,7 @@
     height: 700px; 
     width: 600px; 
     background-color: white;
+    text-align: center;
 }
 
 
@@ -55,7 +56,9 @@
     background-color: white; /* Arka planı beyaz yapar */
     padding-top: 1px; /* İçerik etrafında boşluk oluşturur */
     margin-bottom: 0px;
+    text-align: center;
 }
+
 
 .price-and-cart p {
     font-size: 20px;
