@@ -1,48 +1,46 @@
 import React, { useState, useEffect } from 'react';
 import HomePage from './Home';
+import Customers from './Customers'
 
 import '../../Css/admin.css';
-import UsersComponent from '../UsersComponent';
-import ProductsComponent from '../ProductsComponent';
-import CategoriesComponent from '../CategoriesComponent';
-import AdressesComponent from '../AdressesComponent';
-
 
 function Header() {
-    const [content, setContent] = useState('');
+    const [content, setContent] = useState(<HomePage />);
 
     useEffect(() => {
         // Feather ikonlarını yüklemek için
-        const feather = require('feather-icons');
-        feather.replace();
-        // Sayfa ilk açıldığında Home state'i çalışsın
-        Home();
+        import('feather-icons').then(feather => {
+            feather.replace();
+        });
     }, []);
 
-    const Home = () => {
+    const showHome = () => {
         setContent(<HomePage />);
     }
 
     const showProduct = () => {
-        setContent(<ProductsComponent />);
+        setContent(null); // Burayı değiştirin, null döndürecek
     };
 
     const showCustomer = () => {
-        setContent(<UsersComponent />);
+        setContent(<Customers/>);
     };
-    const showCategoriy = () => {
-        setContent(<CategoriesComponent />);
+
+    const showCategory = () => {
+        setContent(null); // Burayı değiştirin, null döndürecek
     };
-    const showAdress = () => {
-        setContent(<AdressesComponent />);
+
+    const showAddress = () => {
+        setContent(null); // Burayı değiştirin, null döndürecek
     };
+
     return (
         <div className='container'>
             <div className="header2">
                 <nav className="navbar2">
                     <ul className="navbar__menu2">
                         <li className="navbar__item2">
-                            <a href="#" className="navbar__link2" onClick={Home}>
+                            <a href="#" className="navbar__link2" onClick={showHome}>
                                 <i data-feather="home"></i>
                                 <span>Home</span>
                             </a>
@@ -60,22 +58,22 @@ function Header() {
                             </a>
                         </li>
                         <li className="navbar__item2">
-                            <a href="#" className="navbar__link2" onClick={showCategoriy}>
+                            <a href="#" className="navbar__link2" onClick={showCategory}>
                                 <i data-feather="folder"></i>
                                 <span>Categories</span>
                             </a>
                         </li>
                         <li className="navbar__item2">
-                            <a href="#" className="navbar__link2" onClick={showAdress}>
+                            <a href="#" className="navbar__link2" onClick={showAddress}>
                                 <i data-feather="compass"></i>
-                                <span>Adress</span>
+                                <span>Address</span>
                             </a>
                         </li>
                     </ul>
                 </nav>
             </div>
             <div>
-                <div>{content}</div>
+                {content}
             </div>
         </div>
     );

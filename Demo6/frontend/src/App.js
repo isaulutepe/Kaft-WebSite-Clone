@@ -1,32 +1,78 @@
-// src/App.js
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import Routes from './components/Router';
-import SplashScreen from './components/SplashScreen';
+// pages & components
+import Home from './pages/HomePage';
+import AdminPage from './pages/AdminPage';
+import AddCustomer from './components/AdminPage/AddCustomer'
+import Singup from './components/HomePage/Login'
+import ContactPage from './pages/ContactPage';
+import KampanyaliUrunler from './pages/KampanyaliUrunler';
+import GiftCard from './components/HomePage/GiftCard';
+import Basket from './components/HomePage/Basket';
+import PasswordReset from './components/HomePage/PasswordResetRequest';
 
 function App() {
-  const [loading, setLoading] = useState(true);
-  const [isFading, setIsFading] = useState(false);
-
-  useEffect(() => {
-    // Simulating a loading delay
-    const timer = setTimeout(() => {
-      setIsFading(true); // Fade out başlat
-      setTimeout(() => {
-        setLoading(false); // Loading durumunu false yap
-      }, 1000); // Fade out süresi ile aynı olmalı
-    }, 3000); // 3 saniye sonra fade out başlat
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <Router>
-      <div className="App">
-        {loading ? <SplashScreen isFading={isFading} /> : <Routes />}
-      </div>
-    </Router>
+    <div className="App">
+      <BrowserRouter>
+        <div className="pages">
+          <Routes>
+            <Route
+              path="/"
+              element={<Home />}
+            />
+            <Route
+              path="/admin"
+              element={
+                <AdminPage />
+              }
+            />
+            <Route
+              path="/singup"
+              element={
+                <Singup />
+              }
+            />
+            <Route
+              path="/admin/addcustomer"
+              element={
+                <AddCustomer />
+              }
+            />
+            <Route
+              path="/iletisim"
+              element={
+                <ContactPage />
+              }
+            />
+            <Route
+              path="/kampanyaliurunler"
+              element={
+                <KampanyaliUrunler />
+              }
+            />
+            <Route
+              path="/GiftCard"
+              element={
+                <GiftCard />
+              }
+            />
+            <Route
+              path="/Basket"
+              element={
+                <Basket />
+              }
+            />
+            <Route
+              path="/PasswordReset"
+              element={
+                <PasswordReset />
+              }
+            />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </div>
   );
 }
 

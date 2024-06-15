@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
-import Navbar from '../HomePage/Navbar';
-import Footer from '../HomePage/Footer';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 import '../../Css/GiftCard.css';
 import arkaplan from '../../images/hediyekartı.jpg';
 import resim1 from '../../images/giftcard_1.svg';

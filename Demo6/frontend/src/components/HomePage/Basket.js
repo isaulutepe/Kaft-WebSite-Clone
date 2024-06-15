@@ -1,6 +1,6 @@
 import React from 'react';
-import Footer from '../HomePage/Footer';
-import Navbar from '../HomePage/Navbar';
+import Footer from '../../components/Footer';
+import Navbar from '../../components/Navbar';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
@@ -15,7 +15,6 @@ import pantolon from '../../images/pant_man.webp'
 import '../../Css/fonts.css'
 // import required modules
 import { Autoplay } from 'swiper/modules';
-import '../../Css/main.css';
 import tasarımlarımızagözat from '../../images/tasarımlarımızagözat.png';
 
 
