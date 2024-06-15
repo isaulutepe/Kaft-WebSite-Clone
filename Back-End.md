@@ -6,7 +6,8 @@
 2. Üye olma işlemi
 3. Şifre sıfırlama işlemi
 4. Admin paneli kullanıcıların görüntülenmesi
-5. ..
+5. Admin panelinden kullancıı silme
+6. Admin panelinden yeni kullanıcı ekleme
 
 ---
 
