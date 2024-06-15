@@ -2,7 +2,7 @@ Projemizde React çatısını kullandık.
 
 ## İsa Ulutepe Tasarımlar
 
-1. Ana Sayfa Tasarımının Tamam
+1. Ana Sayfa Tasarımının Tamamı
 2. Ana Sayfa da yer alan Swipper alanı
 3. Navbar
 4. Footer
