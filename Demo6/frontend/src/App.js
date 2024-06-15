@@ -8,7 +8,6 @@ import Singup from './components/HomePage/Login'
 import ContactPage from './pages/ContactPage';
 import KampanyaliUrunler from './pages/KampanyaliUrunler';
 import GiftCard from './components/HomePage/GiftCard';
-import Basket from './components/HomePage/Basket';
 import PasswordReset from './components/HomePage/PasswordResetRequest';
 import Productlar from './components/HomePage/Productlar';
 import Details from './components/HomePage/Details';
@@ -65,12 +64,7 @@ function App() {
               <Route path="/product" element={<Productlar />} />
               <Route path="/product/:id" element={<Details />} />
               <Route path="/cart" element={<Cart />} />
-              <Route
-                path="/Basket"
-                element={
-                  <Basket />
-                }
-              />
+
               <Route
                 path="/PasswordReset"
                 element={

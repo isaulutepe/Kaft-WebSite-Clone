@@ -55,7 +55,7 @@ function Navbar() {
                                 <button onClick={logout} className='logout-button'>Çıkış Yap</button>
                             </>
                         )}
-                        <Link to='/Basket'>
+                        <Link to='/cart'>
                             <div className='basket'>
                                 <img src={basketwhite} alt="basket" />
                             </div>
