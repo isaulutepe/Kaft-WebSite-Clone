@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // pages & components
@@ -14,76 +15,105 @@ import Details from './components/Products/Details';
 import Cart from './components/HomePage/Cart';
 import { DataProvider } from './components/Products/Context';
 import AddProduct from './components/AdminPage/AddProduct';
-
+import SplashScreen from './components/SplashScreen';
 function App() {
-  return (
-    <div className="App">
-      <DataProvider>
-        <BrowserRouter>
-          <div className="pages">
-            <Routes>
-              <Route
-                path="/"
-                element={<Home />}
-              />
-              <Route
-                path="/admin"
-                element={
-                  <AdminPage />
-                }
-              />
-              <Route
-                path="/singup"
-                element={
-                  <Singup />
-                }
-              />
-              <Route
-                path="/admin/addcustomer"
-                element={
-                  <AddCustomer />
-                }
-              />
-              <Route
-                path="/iletisim"
-                element={
-                  <ContactPage />
-                }
-              />
-              <Route
-                path="/kampanyaliurunler"
-                element={
-                  <KampanyaliUrunler />
-                }
-              />
-              <Route
-                path="/GiftCard"
-                element={
-                  <GiftCard />
-                }
-              />
-               <Route
-                path="/admin/addproduct"
-                element={
-                  <AddProduct />
-                }
-              />
-              <Route path="/product" element={<Productlar />} />
-              <Route path="/product/:id" element={<Details />} />
-              <Route path="/cart" element={<Cart />} />
 
-              <Route
-                path="/PasswordReset"
-                element={
-                  <PasswordReset />
-                }
-              />
-            </Routes>
-          </div>
-        </BrowserRouter>
-      </DataProvider>
-    </div>
-  );
+
+  const [loading, setLoading] = useState(true);
+  const [isFading, setIsFading] = useState(false);
+  
+  useEffect(() => {
+  // Simulating a loading delay
+  const timer = setTimeout(() => {
+    setIsFading(true); // Fade out başlat
+    setTimeout(() => {
+      setLoading(false); // Loading durumunu false yap
+    }, 1000); // Fade out süresi ile aynı olmalı
+  }, 3000); // 3 saniye sonra fade out başlat
+
+  return () => clearTimeout(timer);
+}, []);
+
+  
+  if (loading){
+    return (
+      <BrowserRouter>
+        <div className="App">
+          {loading ? <SplashScreen isFading={isFading} /> : <Routes />}
+        </div>
+      </BrowserRouter>
+    );
+
+  } else {
+
+        return (
+      <div className="App">
+        <DataProvider>
+          <BrowserRouter>
+            <div className="pages">
+              <Routes>
+                <Route
+                  path="/"
+                  element={<Home />}
+                />
+                <Route
+                  path="/admin"
+                  element={
+                    <AdminPage />
+                  }
+                />
+                <Route
+                  path="/singup"
+                  element={
+                    <Singup />
+                  }
+                />
+                <Route
+                  path="/admin/addcustomer"
+                  element={
+                    <AddCustomer />
+                  }
+                />
+                <Route
+                  path="/iletisim"
+                  element={
+                    <ContactPage />
+                  }
+                />
+                <Route
+                  path="/kampanyaliurunler"
+                  element={
+                    <KampanyaliUrunler />
+                  }
+                />
+                <Route
+                  path="/GiftCard"
+                  element={
+                    <GiftCard />
+                  }
+                />
+                 <Route
+                  path="/admin/addproduct"
+                  element={
+                    <AddProduct />
+                  }
+                />
+                <Route path="/product" element={<Productlar />} />
+                <Route path="/product/:id" element={<Details />} />
+                <Route path="/cart" element={<Cart />} />
+
+                <Route
+                  path="/PasswordReset"
+                  element={
+                    <PasswordReset />
+                  }
+                />
+              </Routes>
+            </div>
+          </BrowserRouter>
+        </DataProvider>
+      </div>
+    );
+  }
 }
-
 export default App;
