@@ -1,24 +1,36 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { DataContext } from './Context';
+import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import '../../Css/Details.css';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Accordion from './Accordion';
 import ImageSlider from './ImageSlider';
-export default function Details({ title, children }) {
-    const { products, addCart } = useContext(DataContext);
-    const [product, setProduct] = useState([]);
-    const { id } = useParams();
+
+const Details = () => {
+    const { id } = useParams(); // URL'den gelen id parametresini alıyoruz
+    const [product, setProduct] = useState(''); // Seçili ürünü tutacak state'i tanımlıyoruz
+    const [loading, setLoading] = useState(true); // Yükleme durumunu tutacak state
+    const [error, setError] = useState(null); // Hata durumunu tutacak state
 
     useEffect(() => {
-        const getProduct = () => {
-            const data = products.filter(item => item._id === id);
-            setProduct(data);
+        const fetchProduct = async () => {
+            try {
+                const response = await fetch(`/api/products/${id}`); // Örneğin, /api/products/:id endpoint'i kullanıyoruz
+                if (!response.ok) {
+                    throw new Error('Ürün bulunamadı.');
+                }
+                const json = await response.json();
+                setProduct(json); // Veritabanından gelen veriyi state'e atıyoruz
+            } catch (error) {
+                console.error('Ürün getirme hatası:', error);
+                setError(error.message);
+            } finally {
+                setLoading(false); // Yükleme durumu tamamlandı
+            }
         };
 
-        getProduct();
-    }, [id, products]);
+        fetchProduct(); // fetchProduct fonksiyonunu useEffect içinde çağırıyoruz
+    }, [id]); // id değiştiğinde useEffect'in tekrar çalışmasını sağlıyoruz
 
     //accordion data
     const data = [
@@ -71,55 +83,61 @@ export default function Details({ title, children }) {
         }
     ];
 
-
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error}</div>;
+    if (!product) return <div>Product not found</div>;
 
     return (
         <>
             <Navbar />
             <div className="product-details-container">
-                {product.map(item => (
-                    <div className="details" key={item._id}>
-                        <div className="image-container">
-                            <img src={item.src} alt={item.title} />
-                        </div>
-                        <div className="info-container">
-                            <h1>{item.title}</h1>
-                            <p className="description">{item.description}</p>
-                            <p className="label">Beden</p>
-                            <div className="sizes">
-                                {/* Bedenler burada listelenecek */}
-                                <span>S</span>
-                                <span>M</span>
-                                <span>L</span>
-                                <span>XL</span>
-                                <span>2XL</span>
-                            </div>
-                            <p className="label">Renk</p>
-                            <div className='colors'>
-                                {item.colors.map((color, index) => (
-                                    <div key={index} className='outer-circle' style={{ borderColor: color }}>
-                                        <div className='inner-circle' style={{ backgroundColor: color }}></div>
-                                    </div>
-                                ))}
-                            </div>
-
-                            <div className="price-and-cart">
-                                <p className="price">{item.price} TL</p>
-                                <Link to="/cart" className="add-to-cart-btn" onClick={() => addCart(item._id)}>
-                                    Sepete Ekle
-                                </Link>
-                            </div>
-                        </div>
-
+                <div className="details">
+                    <div className="image-container">
+                        <img
+                            src={`/${product.image}`}
+                            alt={product.title}
+                            onError={(e) => {
+                                console.error("Error loading image:", e.target.src);
+                                e.target.onerror = null;
+                                e.target.src = "/images/fallback-image.jpg";
+                            }}
+                        />
                     </div>
-                ))}
+                    <div className="info-container">
+                        <h1>{product.title}</h1>
+                        <p className="description">{product.description}</p>
+                        <p className="label">Beden</p>
+                        <div className="sizes">
+                            {/* Bedenler burada listelenecek */}
+                            <span>S</span>
+                            <span>M</span>
+                            <span>L</span>
+                            <span>XL</span>
+                            <span>2XL</span>
+                        </div>
+                        <p className="label">Renk</p>
+                        <div className='colors'>
+                            {product.color}
+                            <div className='outer-circle' style={{ borderColor: product.color }}>
+                                <div className='inner-circle' style={{ backgroundColor: product.color }}></div>
+                            </div>
+                        </div>
+                        <div className="price-and-cart">
+                            <p className="price">{product.price} TL</p>
+                            <Link to="/cart" className="add-to-cart-btn">
+                                Sepete Ekle
+                            </Link>
+                        </div>
+                    </div>
+                </div>
             </div>
-
             <Accordion items={data} keepOthersOpen={false} />
             <React.StrictMode>
-                <ImageSlider/>
+                <ImageSlider />
             </React.StrictMode>
             <Footer />
         </>
     );
-}
+};
+
+export default Details;

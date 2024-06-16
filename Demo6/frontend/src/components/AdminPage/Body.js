@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import HomePage from './Home';
 import Customers from './Customers'
+import Products from './Products.js'
 
 import '../../Css/admin.css';
 
@@ -19,7 +20,7 @@ function Header() {
     }
 
     const showProduct = () => {
-        setContent(null); // Burayı değiştirin, null döndürecek
+        setContent(<Products/>); // Burayı değiştirin, null döndürecek
     };
 
     const showCustomer = () => {

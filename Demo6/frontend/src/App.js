@@ -9,10 +9,11 @@ import ContactPage from './pages/ContactPage';
 import KampanyaliUrunler from './pages/KampanyaliUrunler';
 import GiftCard from './components/HomePage/GiftCard';
 import PasswordReset from './components/HomePage/PasswordResetRequest';
-import Productlar from './components/HomePage/Productlar';
-import Details from './components/HomePage/Details';
+import Productlar from './components/Products/Productlar';
+import Details from './components/Products/Details';
 import Cart from './components/HomePage/Cart';
-import { DataProvider } from './components/HomePage/Context';
+import { DataProvider } from './components/Products/Context';
+import AddProduct from './components/AdminPage/AddProduct';
 
 function App() {
   return (
@@ -59,6 +60,12 @@ function App() {
                 path="/GiftCard"
                 element={
                   <GiftCard />
+                }
+              />
+               <Route
+                path="/admin/addproduct"
+                element={
+                  <AddProduct />
                 }
               />
               <Route path="/product" element={<Productlar />} />

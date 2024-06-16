@@ -5,7 +5,7 @@ import menuwhite from '../images/menuwhite.png'; // menuwhite resmini import ett
 import logoLight from '../images/logo-light.svg'; // logo-light resmini import ettik
 import basketwhite from '../images/basketwhite.png'; // basketwhite resmini import ettik
 import * as AiIcons from "react-icons/io";
-import { SidebarData } from './HomePage/SidebarData';
+import { SidebarData } from './Products/SidebarData';
 import '../Css/Navbar.css';
 import MyModal from './HomePage/LanguageSelect';
 import { Link } from 'react-router-dom';

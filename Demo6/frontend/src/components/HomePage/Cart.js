@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { DataContext } from './Context';
+import { DataContext } from '../Products/Context';
 import {Link} from 'react-router-dom'
 import '../../Css/Cart.css';
 import Navbar from '../../components/Navbar';
