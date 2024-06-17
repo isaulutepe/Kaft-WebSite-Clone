@@ -15,6 +15,7 @@ import Details from './components/Products/Details';
 import AddProduct from './components/AdminPage/AddProduct';
 import SplashScreen from './components/SplashScreen';
 import Basket from './components/HomePage/Basket';
+
 function App() {
 
 

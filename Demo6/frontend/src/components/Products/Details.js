@@ -1,36 +1,42 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import '../../Css/Details.css';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Accordion from './Accordion';
 import ImageSlider from './ImageSlider';
+import { useCart } from '../../context/CartContex';
 
 const Details = () => {
-    const { id } = useParams(); // URL'den gelen id parametresini alıyoruz
-    const [product, setProduct] = useState(''); // Seçili ürünü tutacak state'i tanımlıyoruz
-    const [loading, setLoading] = useState(true); // Yükleme durumunu tutacak state
-    const [error, setError] = useState(null); // Hata durumunu tutacak state
+    const { id } = useParams();
+    const [product, setProduct] = useState('');
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const { addToCart, notification } = useCart();
 
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const response = await fetch(`/api/products/${id}`); // Örneğin, /api/products/:id endpoint'i kullanıyoruz
+                const response = await fetch(`/api/products/${id}`);
                 if (!response.ok) {
                     throw new Error('Ürün bulunamadı.');
                 }
                 const json = await response.json();
-                setProduct(json); // Veritabanından gelen veriyi state'e atıyoruz
+                setProduct(json);
             } catch (error) {
                 console.error('Ürün getirme hatası:', error);
                 setError(error.message);
             } finally {
-                setLoading(false); // Yükleme durumu tamamlandı
+                setLoading(false);
             }
         };
 
-        fetchProduct(); // fetchProduct fonksiyonunu useEffect içinde çağırıyoruz
-    }, [id]); // id değiştiğinde useEffect'in tekrar çalışmasını sağlıyoruz
+        fetchProduct();
+    }, [id]);
+
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error}</div>;
+    if (!product) return <div>Product not found</div>;
 
     //accordion data
     const data = [
@@ -83,9 +89,6 @@ const Details = () => {
         }
     ];
 
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>Error: {error}</div>;
-    if (!product) return <div>Product not found</div>;
 
     return (
         <>
@@ -108,7 +111,6 @@ const Details = () => {
                         <p className="description">{product.description}</p>
                         <p className="label">Beden</p>
                         <div className="sizes">
-                            {/* Bedenler burada listelenecek */}
                             <span>S</span>
                             <span>M</span>
                             <span>L</span>
@@ -124,9 +126,12 @@ const Details = () => {
                         </div>
                         <div className="price-and-cart">
                             <p className="price">{product.price} TL</p>
-                            <Link to="/cart" className="add-to-cart-btn">
+
+                            {/* Sepete ekleme işlemi */}
+                            <button className="add-to-cart-btn" onClick={() => addToCart(id)}>
                                 Sepete Ekle
-                            </Link>
+                            </button>
+                            {notification && <div className="notification">{notification}</div>}
                         </div>
                     </div>
                 </div>
