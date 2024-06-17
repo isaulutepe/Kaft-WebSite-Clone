@@ -29,106 +29,106 @@ function Basket() {
         <br></br><br></br><br></br>
 
 
-        <h1>  Sepetinde ürün bulunmuyor</h1>
+        <h1 style={{textAlign:'center'}}>  Sepetinde ürün bulunmuyor</h1>
         {/* Boşluk bırakmak için */}<br></br>
-        
+
 
         <>
           <div>
-          <img src={tasarımlarımızagözat} alt="tasarımlarımızagözat" style={{ height: '152px',width: '677px' }}/>
+            <img src={tasarımlarımızagözat} alt="tasarımlarımızagözat" style={{ height: '152px', width: '677px', display: 'block', margin: 'auto' }} />
           </div><br></br>
-        
 
-          
+
+
           <div>
-          <Swiper
-            spaceBetween={30}
-            slidesPerView={3}
-            autoplay={{ delay: '1200' }}
-            loop={true}
-            centeredSlides={true}
-            modules={[Autoplay]}
-            className="mySwiper"
-          >
-            <SwiperSlide>
+            <Swiper
+              spaceBetween={30}
+              slidesPerView={3}
+              autoplay={{ delay: '1200' }}
+              loop={true}
+              centeredSlides={true}
+              modules={[Autoplay]}
+              className="mySwiper"
+            >
+              <SwiperSlide>
 
-              <div style={{ position: 'relative', textAlign: 'center' }}>
-                <img style={{ alt: 'bag', height: '65%', width: '65%' }} src={canta} />
-                <div style={{
-                  position: 'absolute', top: '50%', left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  padding: '10px'
-                }}>Çanta</div>
-              </div>
-
-
-            </SwiperSlide>
-            <SwiperSlide>
-
-              <div style={{ position: 'relative', textAlign: 'center' }}>
-                <img style={{ alt: 'beanie', height: '65%', width: '65%' }} src={bere} />
-                <div style={{
-                  position: 'absolute', top: '50%', left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  padding: '10px'
-                }}>Bere</div>
-              </div>
+                <div style={{ position: 'relative', textAlign: 'center' }}>
+                  <img style={{ alt: 'bag', height: '65%', width: '65%' }} src={canta} />
+                  <div style={{
+                    position: 'absolute', top: '50%', left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    padding: '10px'
+                  }}>Çanta</div>
+                </div>
 
 
-            </SwiperSlide>
-            <SwiperSlide>
+              </SwiperSlide>
+              <SwiperSlide>
 
-              <div style={{ position: 'relative', textAlign: 'center' }}>
-                <img style={{ alt: 'jacket', height: '65%', width: '65%' }} src={ceket} />
-                <div style={{
-                  position: 'absolute', top: '50%', left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  padding: '10px'
-                }}>Ceket</div>
-              </div>
-
-
-
-            </SwiperSlide>
-            <SwiperSlide>
-
-              <div style={{ position: 'relative', textAlign: 'center' }}>
-                <img style={{ alt: 'tank', height: '65%', width: '65%' }} src={atlet} />
-                <div style={{
-                  position: 'absolute', top: '50%', left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  padding: '10px'
-                }}>Atlet</div>
-              </div>
+                <div style={{ position: 'relative', textAlign: 'center' }}>
+                  <img style={{ alt: 'beanie', height: '65%', width: '65%' }} src={bere} />
+                  <div style={{
+                    position: 'absolute', top: '50%', left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    padding: '10px'
+                  }}>Bere</div>
+                </div>
 
 
-            </SwiperSlide>
-            <SwiperSlide>
-              <div style={{ position: 'relative', textAlign: 'center' }}>
-                <img style={{ alt: 'short', height: '65%', width: '65%' }} src={short} />
-                <div style={{
-                  position: 'absolute', top: '50%', left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  padding: '10px'
-                }}>Şort</div>
-              </div>
+              </SwiperSlide>
+              <SwiperSlide>
+
+                <div style={{ position: 'relative', textAlign: 'center' }}>
+                  <img style={{ alt: 'jacket', height: '65%', width: '65%' }} src={ceket} />
+                  <div style={{
+                    position: 'absolute', top: '50%', left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    padding: '10px'
+                  }}>Ceket</div>
+                </div>
 
 
-            </SwiperSlide>
-            <SwiperSlide>
-              <div style={{ position: 'relative', textAlign: 'center' }}>
-                <img style={{ alt: 'pant', height: '65%', width: '65%' }} src={pantolon} />
-                <div style={{
-                  position: 'absolute', top: '50%', left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  padding: '10px'
-                }}>Pantolon</div>
-              </div>
+
+              </SwiperSlide>
+              <SwiperSlide>
+
+                <div style={{ position: 'relative', textAlign: 'center' }}>
+                  <img style={{ alt: 'tank', height: '65%', width: '65%' }} src={atlet} />
+                  <div style={{
+                    position: 'absolute', top: '50%', left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    padding: '10px'
+                  }}>Atlet</div>
+                </div>
 
 
-            </SwiperSlide>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div style={{ position: 'relative', textAlign: 'center' }}>
+                  <img style={{ alt: 'short', height: '65%', width: '65%' }} src={short} />
+                  <div style={{
+                    position: 'absolute', top: '50%', left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    padding: '10px'
+                  }}>Şort</div>
+                </div>
 
-          </Swiper>
+
+              </SwiperSlide>
+              <SwiperSlide>
+                <div style={{ position: 'relative', textAlign: 'center' }}>
+                  <img style={{ alt: 'pant', height: '65%', width: '65%' }} src={pantolon} />
+                  <div style={{
+                    position: 'absolute', top: '50%', left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    padding: '10px'
+                  }}>Pantolon</div>
+                </div>
+
+
+              </SwiperSlide>
+
+            </Swiper>
           </div  >
         </>
 

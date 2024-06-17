@@ -12,10 +12,9 @@ import GiftCard from './components/HomePage/GiftCard';
 import PasswordReset from './components/HomePage/PasswordResetRequest';
 import Productlar from './components/Products/Productlar';
 import Details from './components/Products/Details';
-import Cart from './components/HomePage/Cart';
-import { DataProvider } from './components/Products/Context';
 import AddProduct from './components/AdminPage/AddProduct';
 import SplashScreen from './components/SplashScreen';
+import Basket from './components/HomePage/Basket';
 function App() {
 
 
@@ -48,7 +47,7 @@ function App() {
 
         return (
       <div className="App">
-        <DataProvider>
+        
           <BrowserRouter>
             <div className="pages">
               <Routes>
@@ -100,7 +99,6 @@ function App() {
                 />
                 <Route path="/product" element={<Productlar />} />
                 <Route path="/product/:id" element={<Details />} />
-                <Route path="/cart" element={<Cart />} />
 
                 <Route
                   path="/PasswordReset"
@@ -108,10 +106,16 @@ function App() {
                     <PasswordReset />
                   }
                 />
+                  <Route
+                  path="/basket"
+                  element={
+                    <Basket />
+                  }
+                />
               </Routes>
             </div>
           </BrowserRouter>
-        </DataProvider>
+      
       </div>
     );
   }

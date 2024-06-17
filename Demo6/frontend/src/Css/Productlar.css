@@ -1,3 +1,7 @@
+body{
+    background-color: #F2F3EF;
+
+}
 #product{
     width: 100%;
     display: flex;
