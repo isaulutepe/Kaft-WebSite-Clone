@@ -6,12 +6,13 @@
 2. Üye olma işlemi
 3. Şifre sıfırlama işlemi
 4. Ürünlerin Listelenme işlemi
-5. Admin panelinde kullanıcıların görüntülenmesi
-6. Admin panelinde kullanıcı silme
-7. Admin panelinde yeni kullanıcı ekleme
-8. Admin panelinde yeni ürün ekleme
-9. Admin panelinde ürüün silme
-10. Admin panelinde ürünleri görüntüleme
+5. Sepete eklenen ürünlerin listelenmesi/görüntülenmesi
+6. Admin panelinde kullanıcıların görüntülenmesi
+7. Admin panelinde kullanıcı silme
+8. Admin panelinde yeni kullanıcı ekleme
+9. Admin panelinde yeni ürün ekleme
+10. Admin panelinde ürüün silme
+11. Admin panelinde ürünleri görüntüleme
 ---
 
 ## İrem Maydan Kodlamalar
