@@ -17,7 +17,7 @@ import SplashScreen from './components/SplashScreen';
 import Basket from './components/HomePage/Basket';
 import UpdateProduct from './components/AdminPage/UpdateProduct';
 import Payment from './components/HomePage/Payment';
-import Adress from './components/HomePage/Adress';
+import Address from './components/HomePage/Address';
 function App() {
 
 
@@ -126,7 +126,7 @@ function App() {
               <Route
                 path="/adress"
                 element={
-                  <Adress/>
+                  <Address/>
                 }
               />
             </Routes>
