@@ -19,4 +19,4 @@ KAFT, tasarım odaklı bir e-ticaret platformudur. Amacımız, kullanıcıların
 6. [Front-End](Front-End.md)
 7. [Back-End](Back-End.md)
 8. Test
-9. Geliştirici Ve Kullanıcı Dökümantasyonları
+9. [Geliştirici Ve Kullanıcı Dökümantasyonları](Geliştirici-ve-Kullanıcı-Dokümantasyonları.md)
