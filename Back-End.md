@@ -11,7 +11,7 @@
 7. Admin panelinde kullanıcı silme
 8. Admin panelinde yeni kullanıcı ekleme
 9. Admin panelinde yeni ürün ekleme
-10. Admin panelinde ürüün silme
+10. Admin panelinde ürün silme
 11. Admin panelinde ürünleri görüntüleme
 ---
 
@@ -25,7 +25,7 @@
 
 ## Sena Yıldız Kodlamalar
 
-1. ..
+1. Admin ürün güncelleme işlemi
 2. ..
 3. ..
 
