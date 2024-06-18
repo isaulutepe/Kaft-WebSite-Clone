@@ -8,6 +8,7 @@ Projemizde React çatısını kullandık.
 4. Footer
 5. Admin Paneli
 6. Şifre Unuttum ve Şifre Güncelleme formları
+7. Sepetteki ürünlerin listesi
 
 
 ## İrem Maydan Tasarımlar
