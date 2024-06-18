@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../Css/FGmodal.css";
 
-export default function Modal() {
+ function FacebookModal() {
     const [modal, setModal] = useState(false);
 
     const toggleModal = () => {
@@ -41,3 +41,4 @@ export default function Modal() {
         </>
     );
 }
+export default FacebookModal;

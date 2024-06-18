@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../Css/FGmodal.css";
 
-function GoogleModal() {
+function CargoT() {
     const [modal, setModal] = useState(false);
 
     const toggleModal = () => {
@@ -15,9 +15,9 @@ function GoogleModal() {
     }
 
     return (
-        <>
-            <button onClick={toggleModal} className="googlebutton">
-                Google ile giriş
+        <><br></br>
+            <button onClick={toggleModal} className="kargoT">
+                Kargom Nerede
             </button>
 
             {modal && (
@@ -25,14 +25,8 @@ function GoogleModal() {
                     <div onClick={toggleModal} className="overlay"></div>
                     <div className="modal-content">
                         <span className="close" onClick={toggleModal}>&times;</span><br></br><br></br>
-                        <h2>Google ile giriş</h2>
-                        <form>
-                            <input type="text" placeholder="Adınız" required />
-                            <input type="text" placeholder="Soyadınız" required />
-                            <input type="email" placeholder="Mail Adresiniz" required />
-                            <input type="password" placeholder="Şifreniz" required />
-                            <button type="submit" className="üye_ol">üye ol</button>
-                        </form>
+                        
+                        
 
                     </div>
                 </div>
@@ -41,4 +35,4 @@ function GoogleModal() {
         </>
     );
 }
-export default GoogleModal;
+export default CargoT;
