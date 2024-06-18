@@ -124,7 +124,7 @@ function App() {
                 }
               />
               <Route
-                path="/adress"
+                path="/address"
                 element={
                   <Address/>
                 }

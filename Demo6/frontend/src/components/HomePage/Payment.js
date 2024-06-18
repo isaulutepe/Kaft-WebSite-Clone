@@ -128,7 +128,7 @@ const Payment = () => {
                                     onChange={handleChange}
                                     required
                                 />
-                                <button onClick={() => window.location.href = '/adress'}>Adres Düzenle</button>
+                                <button onClick={() => window.location.href = '/address'}>Adres Düzenle</button>
                             </div>
 
                         <input type="submit" value="Ödeme Yap" id="add" />
