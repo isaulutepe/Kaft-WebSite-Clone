@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Footer from '../../components/Footer';
-import Navbar from '../../components/Navbar';
+import Navbar from '../../components/Navbar2';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
@@ -71,7 +71,7 @@ function Basket() {
   };
 
   return (
-    <div style={{backgroundColor:'#e3e3e3'}}>
+    <div style={{backgroundColor:'#F2F3EF'}}>
       <Navbar />
       <br />
       <br />

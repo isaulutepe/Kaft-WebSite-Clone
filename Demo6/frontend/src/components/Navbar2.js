@@ -1,9 +1,9 @@
 // Navbar.js
 import React, { useState } from 'react';
 import '../Css/main.css'; // CSS dosyasını import ettik
-import menuwhite from '../images/menuwhite.png'; // menuwhite resmini import ettik
-import logoLight from '../images/logo-light.svg'; // logo-light resmini import ettik
-import basketwhite from '../images/basketwhite.png'; // basketwhite resmini import ettik
+import menuBlack from '../images/menu.png'; // menuwhite resmini import ettik
+import logoDark from '../images/logo2.svg'; // logo-light resmini import ettik
+import basketBlack from '../images/card.png' // basketwhite resmini import ettik
 import * as AiIcons from "react-icons/io";
 import { SidebarData } from './Products/SidebarData';
 import '../Css/Navbar.css';
@@ -27,19 +27,19 @@ function Navbar() {
 
                     <div className='menuitem'>
                         <div className='menuicon'>
-                            <img src={menuwhite} width="24px" height="24px" alt="menu" onClick={showSidebar} />
+                            <img src={menuBlack} width="24px" height="24px" alt="menu" onClick={showSidebar} />
                         </div>
-                        <div className='menutext' style={{ fontFamily: 'Font2' }}>Menu</div>
+                        <div className='menutext' style={{ fontFamily: 'Font2', color:'black' }}>Menu</div>
                     </div>
 
                     <Link to='/'>
                         <div className='menuitem logo'>
-                            <img src={logoLight} alt="logo" /></div>
+                            <img src={logoDark} alt="logo" /></div>
                     </Link>
                     <div className='menuitem login-basket'>
                         {!user ? (
                             <div className='login' style={{ fontFamily: 'Font2' }}>
-                                <a href="#" onClick={() => setShowLoginModal(true)}>Giriş</a>
+                                <a href="#" onClick={() => setShowLoginModal(true)} style={{color:'black'}}>Giriş</a>
                                 {showLoginModal && (
                                     <LoginModal
                                         show={showLoginModal}
@@ -57,7 +57,7 @@ function Navbar() {
                         )}
                         <Link to='/basket'>
                             <div className='basket'>
-                                <img src={basketwhite} alt="basket" />
+                                <img src={basketBlack} alt="basket" style={{width:'35px'}} />
                             </div>
                         </Link>
                     </div>

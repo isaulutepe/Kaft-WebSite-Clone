@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/Navbar2';
 import '../Css/KampanyaliUrunler.css';
 
 function KampanyaliUrunler() {

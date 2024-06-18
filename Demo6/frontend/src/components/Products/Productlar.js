@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import '../../Css/Productlar.css';
-import Navbar from '../Navbar';
+import Navbar from '../Navbar2';
 import Footer from '../Footer';
 import { useEffect, useState } from "react"
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Navbar from '../../components/Navbar';
+import Navbar from '../../components/Navbar2';
 import "../../Css/Login.css";
 import girişyaplogo from '../../images/girişyaplogo.jpg.png';
 import resim1 from '../../images/resim1.png';
