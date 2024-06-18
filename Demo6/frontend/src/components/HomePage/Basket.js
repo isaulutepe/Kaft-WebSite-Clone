@@ -19,6 +19,7 @@ import { Autoplay } from 'swiper/modules';
 import tasarımlarımızagözat from '../../images/tasarımlarımızagözat.png';
 import { useCart } from '../../context/CartContex'; // Kart konteksinin doğru dosya adı
 import { Link } from 'react-router-dom';
+import Kargo from '../HomePage/Cargo'
 
 function Basket() {
   const { cart } = useCart();
@@ -129,6 +130,7 @@ function Basket() {
       <Link to="/">
         <div style={{ textAlign: 'center' }}>Alışverişe Devam Et</div>
       </Link>
+      <div  style={{ textAlign: 'center' }}><Kargo/></div>
 
       <div style={{ background: '#f2f3ef', height: '120vh' }}>
         <br />

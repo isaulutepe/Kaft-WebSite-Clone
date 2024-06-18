@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import FacebookModal from '../HomePage/FacebookModal'
+import GoogleModal from '../HomePage/GoogleModal'
 
 function LoginModal({ onClose }) {
 
@@ -74,8 +76,8 @@ function LoginModal({ onClose }) {
         )}
         <br />
         <div className="button-container">
-          <div className="square-button"><button>Facebook ile Giriş</button></div>
-          <div className="square-button"><button>Google ile Giriş</button></div>
+        <FacebookModal/> 
+        <GoogleModal/>
           <div className="square-button"><a href="/singup">Üye Ol</a></div>
         </div>
       </div>
