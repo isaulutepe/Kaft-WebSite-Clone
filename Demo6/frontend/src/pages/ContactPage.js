@@ -1,7 +1,7 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/Navbar2';
 import '../Css/ContactPage.css';
-
+import Footer from '../components/Footer';
 function ContactPage() {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -43,6 +43,8 @@ function ContactPage() {
               <button type="submit" className="btn btn-primary">Gönder</button>
             </form>
             <div className="adres">
+            <br></br>
+            <br></br>
         <h2>Adreslerimiz</h2>
         <p>Ofis: Konaklar Mah. Akasyalı Sk. No:12 34330 Beşiktaş/İstanbul Türkiye</p>
         <p>Depo: Yakuplu Mah. Bakırcılar ve Pirinççiler San. Sit. Karanfil Cad. No:5 Kat:1 İstanbul, Türkiye</p>
@@ -56,36 +58,13 @@ function ContactPage() {
         <p>order@kaft.com</p>
         <p>Müşteri Hizmetleri Tel: <a href="tel:+902122673634">+90 212 2673634</a></p>
         <p>Ofis Tel: <a href="tel:+902128432349">+90 212 8432349</a></p>
-        <p>Faks: +90 212 2673638</p>
+        <p>Faks: +90 212 2673638</p>        
       </div>
           </div>
         </div>
-      </div></div>
+      </div><Footer/></div>
   </>
   );
 }
 
 export default ContactPage;
-
-/*import React from 'react';
-import '../src/Css/ContactPage.css';
-import Navbar from './components/HomePage/Navbar';
-function ContactPage() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    // Form gönderildiğinde yapılacak işlemler (örneğin, API'ye gönderme)
-    // ...
-
-    alert('Mesajınız gönderildi!'); // Geçici geri bildirim
-  };
-
-  return (
-    <div className="App">
-      <Navbar />
-      <ContactPage/>
-    </div>
-  );
-}
-*/
-

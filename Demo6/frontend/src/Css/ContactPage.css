@@ -18,14 +18,14 @@
   font-size: 14px; /* Gerekirse, boyutu ayarlayın */
   color: #fff; /* Gerekirse, rengi ayarlayın */
 }
+
 body {
   background-color: #868683;
 }
 
-
 /* Contact form style */
 .contact-page-content {
-  margin: 25vh 25vw ; /* Top, right, and left margins */
+  margin: 25vh 25vw; /* Top, right, and left margins */
   margin-top: 200px;
 }
 
@@ -40,14 +40,17 @@ form label {
 
 form input[type="text"],
 form input[type="email"],
+form input[type="text"],
+form input[type="email"],
 form textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
 }
 
 form textarea {
-  height: 100px;
+  height: 75px;
 }
 
 form button {
@@ -55,7 +58,7 @@ form button {
   color: #fff;
   border: none;
   padding: 10px 20px;
-  cursor: pointer;  
+  cursor: pointer;
   display: block;
   margin: 0 auto; /* Yatayda ortalamak için */
 }

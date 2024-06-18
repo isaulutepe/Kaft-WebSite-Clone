@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar2';
 import '../Css/KampanyaliUrunler.css';
-
+import Footer from '../components/Footer';
 function KampanyaliUrunler() {
     const discountedProducts = []; // Kampanyalı Ürün bilgisi buradan girilecek
     return (
@@ -26,7 +26,7 @@ function KampanyaliUrunler() {
                     <p>Kampanyalı ürün bulunamadı</p>
                 </div>
             )}</div>
-        </div></div>
+        </div><Footer/></div>
     );
 }
 
