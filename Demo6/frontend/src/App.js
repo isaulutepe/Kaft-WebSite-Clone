@@ -15,27 +15,27 @@ import Details from './components/Products/Details';
 import AddProduct from './components/AdminPage/AddProduct';
 import SplashScreen from './components/SplashScreen';
 import Basket from './components/HomePage/Basket';
-
+import UpdateProduct from './components/AdminPage/UpdateProduct';
 function App() {
 
 
   const [loading, setLoading] = useState(true);
   const [isFading, setIsFading] = useState(false);
-  
+
   useEffect(() => {
-  // Simulating a loading delay
-  const timer = setTimeout(() => {
-    setIsFading(true); // Fade out başlat
-    setTimeout(() => {
-      setLoading(false); // Loading durumunu false yap
-    }, 1000); // Fade out süresi ile aynı olmalı
-  }, 3000); // 3 saniye sonra fade out başlat
+    // Simulating a loading delay
+    const timer = setTimeout(() => {
+      setIsFading(true); // Fade out başlat
+      setTimeout(() => {
+        setLoading(false); // Loading durumunu false yap
+      }, 1000); // Fade out süresi ile aynı olmalı
+    }, 3000); // 3 saniye sonra fade out başlat
 
-  return () => clearTimeout(timer);
-}, []);
+    return () => clearTimeout(timer);
+  }, []);
 
-  
-  if (loading){
+
+  if (loading) {
     return (
       <BrowserRouter>
         <div className="App">
@@ -46,77 +46,78 @@ function App() {
 
   } else {
 
-        return (
+    return (
       <div className="App">
-        
-          <BrowserRouter>
-            <div className="pages">
-              <Routes>
-                <Route
-                  path="/"
-                  element={<Home />}
-                />
-                <Route
-                  path="/admin"
-                  element={
-                    <AdminPage />
-                  }
-                />
-                <Route
-                  path="/singup"
-                  element={
-                    <Singup />
-                  }
-                />
-                <Route
-                  path="/admin/addcustomer"
-                  element={
-                    <AddCustomer />
-                  }
-                />
-                <Route
-                  path="/iletisim"
-                  element={
-                    <ContactPage />
-                  }
-                />
-                <Route
-                  path="/kampanyaliurunler"
-                  element={
-                    <KampanyaliUrunler />
-                  }
-                />
-                <Route
-                  path="/GiftCard"
-                  element={
-                    <GiftCard />
-                  }
-                />
-                 <Route
-                  path="/admin/addproduct"
-                  element={
-                    <AddProduct />
-                  }
-                />
-                <Route path="/product" element={<Productlar />} />
-                <Route path="/product/:id" element={<Details />} />
 
-                <Route
-                  path="/PasswordReset"
-                  element={
-                    <PasswordReset />
-                  }
-                />
-                  <Route
-                  path="/basket"
-                  element={
-                    <Basket />
-                  }
-                />
-              </Routes>
-            </div>
-          </BrowserRouter>
-      
+        <BrowserRouter>
+          <div className="pages">
+            <Routes>
+              <Route
+                path="/"
+                element={<Home />}
+              />
+              <Route
+                path="/admin"
+                element={
+                  <AdminPage />
+                }
+              />
+              <Route
+                path="/singup"
+                element={
+                  <Singup />
+                }
+              />
+              <Route
+                path="/admin/addcustomer"
+                element={
+                  <AddCustomer />
+                }
+              />
+              <Route
+                path="/iletisim"
+                element={
+                  <ContactPage />
+                }
+              />
+              <Route
+                path="/kampanyaliurunler"
+                element={
+                  <KampanyaliUrunler />
+                }
+              />
+              <Route
+                path="/GiftCard"
+                element={
+                  <GiftCard />
+                }
+              />
+              <Route
+                path="/admin/addproduct"
+                element={
+                  <AddProduct />
+                }
+              />
+              <Route path="/admin/update/product/:id" element={<UpdateProduct />} />
+              <Route path="/product" element={<Productlar />} />
+              <Route path="/product/:id" element={<Details />} />
+
+              <Route
+                path="/PasswordReset"
+                element={
+                  <PasswordReset />
+                }
+              />
+              <Route
+                path="/basket"
+                element={
+                  <Basket />
+                }
+              />
+            </Routes>
+          </div>
+        </BrowserRouter>
+
       </div>
     );
   }
