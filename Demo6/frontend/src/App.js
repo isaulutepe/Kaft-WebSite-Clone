@@ -16,6 +16,8 @@ import AddProduct from './components/AdminPage/AddProduct';
 import SplashScreen from './components/SplashScreen';
 import Basket from './components/HomePage/Basket';
 import UpdateProduct from './components/AdminPage/UpdateProduct';
+import Payment from './components/HomePage/Payment';
+import Adress from './components/HomePage/Adress';
 function App() {
 
 
@@ -114,7 +116,21 @@ function App() {
                   <Basket />
                 }
               />
+
+              <Route
+                path="/payment"
+                element={
+                  <Payment />
+                }
+              />
+              <Route
+                path="/adress"
+                element={
+                  <Adress/>
+                }
+              />
             </Routes>
+
           </div>
         </BrowserRouter>
 

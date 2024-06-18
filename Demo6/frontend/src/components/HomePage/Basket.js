@@ -130,6 +130,9 @@ function Basket() {
       <Link to="/">
         <div style={{ textAlign: 'center' }}>Alışverişe Devam Et</div>
       </Link>
+      <Link to="/payment">
+        <div style={{ textAlign: 'center' }}>Sepeti Onayla</div>
+      </Link>
       <div  style={{ textAlign: 'center' }}><Kargo/></div>
 
       <div style={{ background: '#f2f3ef', height: '120vh' }}>
