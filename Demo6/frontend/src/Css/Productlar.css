@@ -94,15 +94,17 @@ body{
     font-size: 16px;
     width: 150px;
 }
-
+.clear-button,
 .filter-button {
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 12px;
     background-color: #007bff;
     color: #fff;
     border: none;
     cursor: pointer;
-    margin-top: 33px; /* Butonu 5 piksel aşağıya kaydır */
+    margin-top: 33px; /* Butonu 33 piksel aşağıya kaydır */
+    width: 110px;
+    margin-left: 10px;
 }
 
 #product {

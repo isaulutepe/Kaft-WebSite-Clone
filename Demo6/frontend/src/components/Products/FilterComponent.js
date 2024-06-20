@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
-const FilterComponent = () => {
-    const navigate = useNavigate();
+const FilterComponent = ({ onFilter, onClear }) => {
     const [minPrice, setMinPrice] = useState('');
     const [maxPrice, setMaxPrice] = useState('');
 
     const handleFilterChange = () => {
-        const searchParams = new URLSearchParams();
-        if (minPrice) searchParams.set('minPrice', minPrice);
-        if (maxPrice) searchParams.set('maxPrice', maxPrice);
-        navigate({ search: searchParams.toString() });
+        const filters = {};
+        if (minPrice) filters.minPrice = minPrice;
+        if (maxPrice) filters.maxPrice = maxPrice;
+
+        onFilter(filters);
+    }
+
+    const handleClearFilters = () => {
+        setMinPrice('');
+        setMaxPrice('');
+        onClear();
     }
 
     return (
@@ -30,6 +35,7 @@ const FilterComponent = () => {
                 className="filter-input"
             />
             <button onClick={handleFilterChange} className="filter-button">Filtrele</button>
+            <button onClick={handleClearFilters} className="clear-button">Filtreyi kaldır</button>
         </div>
     );
 }
