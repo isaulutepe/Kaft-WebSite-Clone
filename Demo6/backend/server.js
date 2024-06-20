@@ -5,6 +5,7 @@ const customerRoutes = require('./routes/customers')
 const authRoutes = require('./routes/auth');
 const resetPasswordRoutes = require('./routes/resetPassword')
 const productRoutes = require('./routes/product')
+const addressRoutes = require('./routes/addressRoutes')
 const path = require('path');
 
 
@@ -26,6 +27,7 @@ app.use('/api/customers', customerRoutes)
 app.use('/api/auth', authRoutes)
 app.use('/api/resetpassword', resetPasswordRoutes)
 app.use('/api/products', productRoutes)
+app.use('/api/address', addressRoutes)
 // Değişiklik burada, dosya ismi doğru olmalı
 
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../Css/Address.css";
-
+import axios from "axios";
 function AddressField(props) {
   return (
     <div className="field">
@@ -20,8 +20,28 @@ function AddressForm() {
   const [city, setCity] = useState('');
   const [country, setCountry] = useState('');
 
+  const [address, setAddress] = useState('');
+  const [postalCode, setPostalCode] = useState('');
+ 
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+        await axios.post('http://localhost:3000/api/address', {
+            address,
+            postalCode,
+            city,
+            country
+        });
+        // Başarıyla eklendiğinde kullanıcıya bildirim veya yönlendirme yapılabilir
+        console.log('Address added successfully');
+    } catch (err) {
+        console.error('Error adding address:', err);
+    }
+};
+
   return (
-    <div className="form-container"> {/* Yeni eklenen container */}
+    <form className="form-container" onSubmit={handleSubmit}> {/* Yeni eklenen container */}
       <div className="box">
         <AddressField
           name="Adres"
@@ -75,7 +95,7 @@ function AddressForm() {
           </div>
         </div>
       </div>
-    </div>
+    </form>
   );
 }
 
