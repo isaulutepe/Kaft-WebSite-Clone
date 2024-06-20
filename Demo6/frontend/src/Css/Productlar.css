@@ -75,3 +75,104 @@ body{
     letter-spacing: 2px;
     margin: 15px 0;
 }
+/* Productlar.css */
+
+.content-container {
+    padding-top: 80px; /* Navbar ile içerik arasında daha fazla boşluk bırak */
+}
+
+.filter-container {
+    display: flex;
+    align-items: center; /* Elemanları dikeyde ortala */
+    justify-content: center; /* Elemanları yatayda ortala */
+    margin-bottom: 20px; /* Filtreleme alanı ile ürünler arasında boşluk bırak */
+}
+
+.filter-input {
+    margin-right: 10px; /* Inputlar arasında boşluk bırak */
+    padding: 10px;
+    font-size: 16px;
+    width: 150px;
+}
+
+.filter-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 33px; /* Butonu 5 piksel aşağıya kaydır */
+}
+
+#product {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Kartlar arasında boşluk bırak */
+    justify-content: center; /* Kartları ortala */
+    padding: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card .content {
+    padding: 15px;
+}
+
+.card .content h3 {
+    margin: 0 0 10px;
+}
+
+.card .content p {
+    margin: 0 0 10px;
+}
+
+.card .content span {
+    font-weight: bold;
+    color: #333;
+}
+
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card .content {
+    padding: 15px;
+}
+
+.card .content h3 {
+    margin: 0 0 10px;
+}
+
+.card .content p {
+    margin: 0 0 10px;
+}
+
+.card .content span {
+    font-weight: bold;
+    color: #333;
+}
+

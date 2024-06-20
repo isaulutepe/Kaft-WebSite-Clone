@@ -1,6 +1,4 @@
 const Product = require('../models/productModel');
-
-
 const multer = require('multer');
 const path = require('path');
 
@@ -29,29 +27,41 @@ const upload = multer({
 });
 
 // Yeni ürün ekleme
-exports.createProduct = async (req, res) => {
-    try {
-        const product = new Product({
-            title: req.body.title,
-            image: req.file.path,
-            description: req.body.description,
-            content: req.body.content,
-            price: req.body.price,
-            color: req.body.color,
-            count: req.body.count
-        });
-        const savedProduct = await product.save();
-        res.status(201).json(savedProduct);
-    } catch (err) {
-        res.status(400).json({ message: err.message });
+exports.createProduct = [
+    upload.single('image'),
+    async (req, res) => {
+        try {
+            const product = new Product({
+                title: req.body.title,
+                image: req.file.path,
+                description: req.body.description,
+                content: req.body.content,
+                price: req.body.price,
+                color: req.body.color,
+                count: req.body.count
+            });
+            const savedProduct = await product.save();
+            res.status(201).json(savedProduct);
+        } catch (err) {
+            res.status(400).json({ message: err.message });
+        }
     }
-};
+];
 
-
-// Tüm ürünleri listeleme
+// Tüm ürünleri listeleme (filtreleme ile)
 exports.getAllProducts = async (req, res) => {
     try {
-        const products = await Product.find();
+        const { minPrice, maxPrice, ...otherFilters } = req.query;
+
+        const filters = { ...otherFilters };
+
+        if (minPrice || maxPrice) {
+            filters.price = {};
+            if (minPrice) filters.price.$gte = Number(minPrice);
+            if (maxPrice) filters.price.$lte = Number(maxPrice);
+        }
+
+        const products = await Product.find(filters);
         res.status(200).json(products);
     } catch (err) {
         res.status(500).json({ message: err.message });
@@ -72,17 +82,24 @@ exports.getProductById = async (req, res) => {
 };
 
 // Ürünü güncelleme
-exports.updateProduct = async (req, res) => {
-    try {
-        const product = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
-        if (!product) {
-            return res.status(404).json({ message: 'Ürün bulunamadı' });
+exports.updateProduct = [
+    upload.single('image'),
+    async (req, res) => {
+        try {
+            const updateData = {
+                ...req.body,
+                ...(req.file && { image: req.file.path }) // Yeni resim yüklenmişse, image alanını güncelle
+            };
+            const product = await Product.findByIdAndUpdate(req.params.id, updateData, { new: true, runValidators: true });
+            if (!product) {
+                return res.status(404).json({ message: 'Ürün bulunamadı' });
+            }
+            res.status(200).json(product);
+        } catch (err) {
+            res.status(400).json({ message: err.message });
         }
-        res.status(200).json(product);
-    } catch (err) {
-        res.status(400).json({ message: err.message });
     }
-};
+];
 
 // Ürünü silme
 exports.deleteProduct = async (req, res) => {
