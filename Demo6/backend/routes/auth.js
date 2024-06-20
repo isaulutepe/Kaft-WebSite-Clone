@@ -3,11 +3,12 @@
 
 const express = require('express');
 const router = express.Router();
-const {authController,facebooklogin} = require('../controllers/authController');
+const authController= require('../controllers/authController');
+
 
 // POST /login
 router.post('/login', authController.loginCustomer);
 // facebook
-router.post('/facebooklogin',facebooklogin);
+router.post('/facebooklogin', authController.facebooklogin);
 
 module.exports = router;
