@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../Css/Address.css";
 import axios from "axios";
+
 function AddressField(props) {
   const { name, type, placeholder, value, onChange, className } = props;
 
@@ -19,7 +20,6 @@ function AddressField(props) {
     </div>
   );
 }
-
 
 function AddressForm() {
   const [city, setCity] = useState('');
@@ -47,7 +47,6 @@ function AddressForm() {
       console.error('Error adding address:', err);
     }
   };
-
 
   return (
     <form className="form-container" onSubmit={handleSubmit}>
@@ -100,9 +99,9 @@ function AddressForm() {
         </div>
         <div className="field is-grouped">
           <div className="control">
-            <button onClick={() => window.location.href = '/payment'}>Ekle</button>
-            <button className="button is-link">Güncelle</button>
-            <button className="button is-link">Sil</button>
+            <button type="submit" className="button is-link">Güncelle</button>
+            <button type="submit" className="button is-link">Sil</button>
+            {/* Diğer butonlar buraya eklenebilir */}
           </div>
         </div>
       </div>
@@ -111,4 +110,3 @@ function AddressForm() {
 }
 
 export default AddressForm;
-

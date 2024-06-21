@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import '../../Css/Payment.css';
 import chip from '../../images/chip.png';
 import aprox from '../../images/aprox.png';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Payment = () => {
     const [details, setDetails] = useState({
         name: "",
         email: "",
-        adress: ""
+        address: ""
     });
 
     const handleChange = (e) => {
@@ -17,10 +17,7 @@ const Payment = () => {
             return { ...prev, [name]: value };
         })
     }
-    const handleSubmitTwo = (e) => {
-        e.preventDefault();
-        console.log(details);
-    }
+
     const navigate = useNavigate();
 
     const [cardNumber, setCardNumber] = useState('');
@@ -54,9 +51,9 @@ const Payment = () => {
     };
 
     const handleAddAddress = () => {
-        alert("Adres ekleme butonuna tıklandı!");
         navigate("/address"); // Adres ekleme sayfasına yönlendirme yapılıyor
     };
+
     const [addressInfo, setAddressInfo] = useState(null);
 
     useEffect(() => {
@@ -68,6 +65,7 @@ const Payment = () => {
             sessionStorage.removeItem('addressInfo');
         }
     }, []);
+
     return (
         <main className="container">
             <section className="ui">
@@ -126,10 +124,8 @@ const Payment = () => {
                                     required
                                 />
                             </div>
-
-
                         </div>
-                        <div className="adress-container">
+                        <div className="address-container">
                             <label>Adres</label>
                             {addressInfo ? (
                                 <input
@@ -142,7 +138,10 @@ const Payment = () => {
                             ) : (
                                 <span>Adres bilgisi bulunamadı.</span>
                             )}
-                            <button onClick={() => window.location.href = '/address'}>Adres Düzenle</button>
+                            <button onClick={handleAddAddress} style={{ backgroundColor: '#008cb1' }}>
+                                {addressInfo ? 'Adres Güncelle' : 'Adres Ekle'}
+                            </button>
+
                         </div>
 
                         <input type="submit" value="Ödeme Yap" id="add" />
@@ -151,7 +150,7 @@ const Payment = () => {
                 <div className="container-right">
                     <div className="card-btn">
                         <div className="intern">
-                            <img className="approximation" src={aprox} alt="aproximation" />
+                            <img className="approximation" src={aprox} alt="approximation" />
                             <div className="card-number">
                                 <div className="number-vl">{cardNumber}</div>
                             </div>
@@ -171,7 +170,6 @@ const Payment = () => {
                             </div>
                             <img className="chip" src={chip} alt="chip" />
                         </div>
-
                     </div>
                 </div>
             </section>
