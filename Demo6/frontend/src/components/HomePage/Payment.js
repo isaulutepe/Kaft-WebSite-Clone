@@ -171,6 +171,7 @@ const Payment = () => {
                             </div>
                             <img className="chip" src={chip} alt="chip" />
                         </div>
+
                     </div>
                 </div>
             </section>
