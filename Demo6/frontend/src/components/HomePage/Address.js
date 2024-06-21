@@ -37,10 +37,17 @@ function AddressForm() {
         country
       });
       console.log('Address added successfully');
+
+      // Adres bilgilerini sessionStorage'e kaydet
+      sessionStorage.setItem('addressInfo', JSON.stringify({ address, postalCode, city, country }));
+
+      // /payment sayfasına yönlendir
+      window.location.href = '/payment';
     } catch (err) {
       console.error('Error adding address:', err);
     }
   };
+
 
   return (
     <form className="form-container" onSubmit={handleSubmit}>
@@ -93,7 +100,7 @@ function AddressForm() {
         </div>
         <div className="field is-grouped">
           <div className="control">
-            <button className="button is-link">Ekle</button>
+            <button onClick={() => window.location.href = '/payment'}>Ekle</button>
             <button className="button is-link">Güncelle</button>
             <button className="button is-link">Sil</button>
           </div>

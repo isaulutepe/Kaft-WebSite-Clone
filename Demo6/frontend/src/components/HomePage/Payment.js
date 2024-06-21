@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../Css/Payment.css';
 import chip from '../../images/chip.png';
 import aprox from '../../images/aprox.png';
@@ -57,7 +57,17 @@ const Payment = () => {
         alert("Adres ekleme butonuna tıklandı!");
         navigate("/address"); // Adres ekleme sayfasına yönlendirme yapılıyor
     };
+    const [addressInfo, setAddressInfo] = useState(null);
 
+    useEffect(() => {
+        // sessionStorage'den adres bilgilerini al
+        const storedAddressInfo = sessionStorage.getItem('addressInfo');
+        if (storedAddressInfo) {
+            setAddressInfo(JSON.parse(storedAddressInfo));
+            // sessionStorage'deki bilgileri temizle (isteğe bağlı)
+            sessionStorage.removeItem('addressInfo');
+        }
+    }, []);
     return (
         <main className="container">
             <section className="ui">
@@ -116,20 +126,24 @@ const Payment = () => {
                                     required
                                 />
                             </div>
-                            
+
 
                         </div>
                         <div className="adress-container">
-                                <label>Adres</label>
+                            <label>Adres</label>
+                            {addressInfo ? (
                                 <input
                                     type="text"
-                                    name="adress"
-                                    className="adress-input"
-                                    onChange={handleChange}
-                                    required
+                                    name="address"
+                                    className="address-input"
+                                    value={`${addressInfo.address}, ${addressInfo.postalCode}, ${addressInfo.city}, ${addressInfo.country}`}
+                                    readOnly
                                 />
-                                <button onClick={() => window.location.href = '/address'}>Adres Düzenle</button>
-                            </div>
+                            ) : (
+                                <span>Adres bilgisi bulunamadı.</span>
+                            )}
+                            <button onClick={() => window.location.href = '/address'}>Adres Düzenle</button>
+                        </div>
 
                         <input type="submit" value="Ödeme Yap" id="add" />
                     </form>
