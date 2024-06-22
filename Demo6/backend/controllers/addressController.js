@@ -22,8 +22,36 @@ const getAddresses = async (req, res) => {
     }
 };
 
+// Adres güncellemek
+const updateAddress = async (req, res) => {
+    try {
+        const updatedAddress = await Address.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+        if (!updatedAddress) {
+            return res.status(404).json({ message: 'Adres bulunamadı.' });
+        }
+        res.status(200).json(updatedAddress);
+    } catch (error) {
+        res.status(400).json({ message: 'Adres güncellenirken bir hata oluştu.' });
+    }
+};
+
+// Adres silmek
+const deleteAddress = async (req, res) => {
+    try {
+        const deletedAddress = await Address.findByIdAndDelete(req.params.id);
+        if (!deletedAddress) {
+            return res.status(404).json({ message: 'Adres bulunamadı.' });
+        }
+        res.status(200).json({ message: 'Adres başarıyla silindi.' });
+    } catch (error) {
+        res.status(500).json({ message: 'Adres silinirken bir hata oluştu.' });
+    }
+};
+
 module.exports = {
     createAddress,
-    getAddresses
+    getAddresses,
+    updateAddress,
+    deleteAddress
     // Diğer işlevleri de ekleyebilirsiniz (güncelleme, silme vb.)
 };

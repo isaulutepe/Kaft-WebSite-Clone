@@ -40,9 +40,9 @@ const Productlar = () => {
             <div className="content-container">
                 <FilterComponent onFilter={handleFilter} onClear={handleClearFilters} />
                 {loading ? (
-                    <p>Loading...</p>
+                    <p><center>Ürünler Yükleniyor...</center></p>
                 ) : products.length === 0 ? (
-                    <p>Ürün bulunamadı.</p>
+                    <p><center>Ürün bulunamadı</center></p>
                 ) : (
                     <div id="product">
                         {products.map((product) => (

@@ -98,12 +98,12 @@ body{
 .filter-button {
     padding: 10px 20px;
     font-size: 12px;
-    background-color: #007bff;
+    background-color: #2f7485;
     color: #fff;
     border: none;
     cursor: pointer;
     margin-top: 33px; /* Butonu 33 piksel aşağıya kaydır */
-    width: 110px;
+    width: 120px;
     margin-left: 10px;
 }
 

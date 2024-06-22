@@ -10,6 +10,10 @@ router.post('/', addressController.createAddress);
 // Tüm adresleri getirmek için GET isteği
 router.get('/', addressController.getAddresses);
 
-// Diğer rotaları da ekleyebilirsiniz (güncelleme, silme vb.)
+// Belirli bir adresi güncellemek için PUT isteği
+router.put('/:id', addressController.updateAddress);
+
+// Belirli bir adresi silmek için DELETE isteği
+router.delete('/:id', addressController.deleteAddress);
 
 module.exports = router;
