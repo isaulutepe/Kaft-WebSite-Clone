@@ -29,7 +29,11 @@
     left: -100%;
     transition: 850ms;
     z-index: 1;
+    overflow-y: auto; /* Dikey kaydırma çubuğunu aktif hale getir */
 }
+
+
+
 
 .nav-menu.active {
     left: 0;
@@ -79,7 +83,7 @@
 
 .nav-menu-items#column-2 {
     background-color: #E7BD29;
-    width: 300px;
+    width: 400px;
 
 }
 
@@ -106,7 +110,7 @@
     color: #353533;
     font-size: 35px;
     text-align: center;
-    margin-top: 83px;
+    margin-top: 80px;
 }
 
 .nav-text-title {
@@ -218,4 +222,25 @@ button {
 
 .white-text-surdurebilirlik{
     cursor: auto;
+}
+
+/*responsive*/
+@media screen and (max-width: 1400px) {
+    .nav-menu {
+        flex-direction: column;
+        width: 33%; /* Küçük ekranlarda tam genişlikte olmasını sağla */
+    }
+    .nav-menu-items#column-3 {
+        background: linear-gradient(to bottom, #353533 70%, #D3CDBF 30%);
+        width: 450px;
+    }
+    .nav-menu-items#column-2 {
+        background-color: #E7BD29;
+        width: 400px;
+    
+    }
+    .text-center button{
+        margin-left: 25px;
+    }
+    
 }
