@@ -69,15 +69,17 @@
 }
 
 .add-to-cart-btn {
+    padding: 2px;
     width: 400px;
     height: 50px; /* Butonun yüksekliğini artırır */
     background-color: #4AD8C1;
     color: white;
     text-decoration: none;
     text-align: center;
-    display: inline-block;
+    justify-content: center;
+    align-items: center;
     line-height: 50px; /* Buton metnini dikey olarak merkeze hizalar */
-    margin-bottom: 0;
+    margin-bottom: 0px;
 }
 
 
