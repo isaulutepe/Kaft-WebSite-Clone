@@ -24,7 +24,8 @@ Projemizde React çatısını kullandık.
 3. Ürünlerin detay sayfasının tasarımı
 4. Sepete ekle sayfası tasarımı
 5. Admin ürün güncelleme sayfası tasarımı
-
+6. Ödeme sayfası tasarımı
+7. Adres sayfasının tasarımı
 # Engin Gül Tasarımlar
 
 1. ..
