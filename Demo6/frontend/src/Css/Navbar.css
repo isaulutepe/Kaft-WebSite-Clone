@@ -77,6 +77,7 @@
 }
 
 .nav-menu-items#column-1 {
+    text-align: center;
     background-color: white;
     width: 300px;
 }
@@ -94,7 +95,7 @@
 
 .nav-menu-items#column-4 {
     background-color: white;
-    width: 350px;
+    width: 300px;
 }
 
 #column-1 h1 {
@@ -236,11 +237,29 @@ button {
     }
     .nav-menu-items#column-2 {
         background-color: #E7BD29;
-        width: 400px;
+        width: 420px;
     
     }
     .text-center button{
         margin-left: 25px;
     }
+    #column-1 h1 {
+        color: #353533;
+        text-align: left;
+        margin-left: 1rem;
+    }
     
+    #column-2 h1,
+    #column-3 h1,
+    #column-4 h1 {
+        color: #353533;
+        text-align: left;
+        margin-left: 1rem;
+    }
+    .white-text-surdurebilirlik {
+        color: white;
+        text-align: left;
+        margin-left: 1rem;
+      }
+      
 }
