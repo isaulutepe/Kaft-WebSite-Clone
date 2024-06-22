@@ -1,6 +1,7 @@
 const Product = require('../models/productModel');
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
 
 // Multer storage ve file filter yapılandırması
 const storage = multer.diskStorage({
@@ -81,25 +82,36 @@ exports.getProductById = async (req, res) => {
     }
 };
 
+
 // Ürünü güncelleme
-exports.updateProduct = [
-    upload.single('image'),
-    async (req, res) => {
-        try {
-            const updateData = {
-                ...req.body,
-                ...(req.file && { image: req.file.path }) // Yeni resim yüklenmişse, image alanını güncelle
-            };
-            const product = await Product.findByIdAndUpdate(req.params.id, updateData, { new: true, runValidators: true });
-            if (!product) {
-                return res.status(404).json({ message: 'Ürün bulunamadı' });
-            }
-            res.status(200).json(product);
-        } catch (err) {
-            res.status(400).json({ message: err.message });
+exports.updateProduct = async (req, res) => {
+    try {
+        const updateData = {
+            ...req.body,
+            ...(req.file && { image: req.file.path }) // Yeni resim yüklenmişse, image alanını güncelle
+        };
+
+        const product = await Product.findById(req.params.id);
+        if (!product) {
+            return res.status(404).json({ message: 'Ürün bulunamadı' });
         }
+
+        // Yeni resim yüklendiğinde eski resmi sil
+        if (req.file && product.image) {
+            fs.unlink(product.image, (err) => {
+                if (err) {
+                    console.error('Eski resim silinemedi:', err);
+                }
+            });
+        }
+
+        const updatedProduct = await Product.findByIdAndUpdate(req.params.id, updateData, { new: true, runValidators: true });
+
+        res.status(200).json(updatedProduct);
+    } catch (err) {
+        res.status(400).json({ message: err.message });
     }
-];
+};
 
 // Ürünü silme
 exports.deleteProduct = async (req, res) => {

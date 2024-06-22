@@ -1,9 +1,9 @@
+// product.js
 const express = require('express');
 const router = express.Router();
 const productController = require('../controllers/productController');
 const multer = require('multer');
 
-// Multer storage ve file filter yapılandırması
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, 'uploads/');
@@ -14,7 +14,6 @@ const storage = multer.diskStorage({
 });
 
 const fileFilter = (req, file, cb) => {
-    // Yalnızca resim dosyalarını kabul et
     if (file.mimetype.startsWith('image/')) {
         cb(null, true);
     } else {
@@ -30,23 +29,13 @@ const upload = multer({
 // Yeni ürün ekleme
 router.post('/', upload.single('image'), productController.createProduct);
 
-// Diğer route'lar
 router.get('/', productController.getAllProducts);
 router.get('/:id', productController.getProductById);
-router.patch('/:id', upload.single('image'), productController.updateProduct);
+router.put('/:id', upload.single('image'), productController.updateProduct);
 router.delete('/:id', productController.deleteProduct);
-// Resim yükleme için rota
+
 router.post('/upload', upload.single('file'), (req, res) => {
-    // Yüklenen dosyanın yolunu ve diğer bilgilerini işle
     res.json({ filePath: req.file.path });
 });
-
-// Ürün güncelleme
-router.use((req, res, next) => {
-    console.log(req.body);
-    next();
-});
-
-router.put('/:id', upload.single('image'), productController.updateProduct);
 
 module.exports = router;

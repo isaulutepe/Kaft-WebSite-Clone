@@ -12,7 +12,6 @@ function UpdateProduct() {
         image: '',
         price: '',
         description: ''
-        // Diğer alanlar
     });
 
     useEffect(() => {
@@ -30,22 +29,23 @@ function UpdateProduct() {
             [name]: value
         });
     };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
             const formData = new FormData();
             formData.append('title', product.title);
-            formData.append('image', product.image); // Önceki resim
             formData.append('price', product.price);
             formData.append('description', product.description);
-            // Diğer alanları da FormData'ya ekleyin
+            formData.append('image', product.image); // Mevcut resmi FormData'ya ekleyin
 
             const response = await axios.put(`http://localhost:3000/api/products/${id}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
             });
+
             if (response.status === 200) {
                 navigate('/admin');
             }
@@ -53,6 +53,7 @@ function UpdateProduct() {
             console.error('Failed to update product', error);
         }
     };
+
 
 
     const onDrop = useCallback((acceptedFiles) => {
@@ -66,11 +67,10 @@ function UpdateProduct() {
             }
         })
             .then(response => {
-                console.log('Upload response:', response.data);
                 if (response.data.filePath) {
                     setProduct(prevProduct => ({
                         ...prevProduct,
-                        image: response.data.filePath
+                        image: response.data.filePath // Mevcut resmi güncelle
                     }));
                 } else {
                     console.error('No filePath in response');
@@ -80,6 +80,7 @@ function UpdateProduct() {
                 console.error('Failed to upload image', error);
             });
     }, []);
+
 
     const { getRootProps, getInputProps } = useDropzone({ onDrop, accept: 'image/*' });
 
@@ -99,6 +100,8 @@ function UpdateProduct() {
                         <img src={`http://localhost:3000/${product.image}`} alt="Product" style={{ width: '100px', height: '100px' }} />
                     </div>
                 )}
+
+
 
                 <label htmlFor="price">Product Price:</label>
                 <input type="number" id="price" name="price" value={product.price} onChange={handleChange} />
