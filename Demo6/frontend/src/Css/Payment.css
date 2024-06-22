@@ -13,7 +13,7 @@
     padding: 10%;
     display: flex;
     gap: 20px;
-    background-color: #E6E7DF;
+    background-color: #898f65;
 }
 
 .container-left {
@@ -43,8 +43,9 @@
 }
 
 .approximation {
-    width: 30px;
+    width: 40px;
     transform: rotate(90deg);
+    margin-top: 40px;
 }
 
 .chip {
@@ -103,7 +104,7 @@ button {
     border-radius: 5px;
     padding: 10px;
     background-color: black;
-    color: white;
+    color: rgb(17, 12, 12);
     font-weight: 600;
     font-size: 1.1rem;
     outline: 0;
@@ -171,4 +172,10 @@ input[type="submit"],
     .container-right {
         width: 100%;
     }
+}
+.no-address {
+    color: rgb(206, 40, 40);
+    padding: 10px; /* Boşluk eklemek için padding kullanın */
+    display: block; /* Span'ı blok eleman yaparak alt satıra geçmesini sağlayın */
+    margin-top: 10px; /* Alt satıra boşluk vermek için margin kullanın */
 }

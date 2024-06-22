@@ -99,8 +99,7 @@ function AddressForm() {
         </div>
         <div className="field is-grouped">
           <div className="control">
-            <button type="submit" className="button is-link">Güncelle</button>
-            <button type="submit" className="button is-link">Sil</button>
+            <button type="submit" className="button is-link">Onayla</button>
             {/* Diğer butonlar buraya eklenebilir */}
           </div>
         </div>
