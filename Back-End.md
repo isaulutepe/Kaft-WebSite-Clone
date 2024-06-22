@@ -26,8 +26,10 @@
 ## Sena Yıldız Kodlamalar
 
 1. Admin ürün güncelleme işlemi
-2. ..
-3. ..
+2. Kullanıcının adres ekleme işlemi 
+3. Sepete ürün ekleme işlemi
+4. Ürün satın alma işlemi
+5. Ürün detayı görüntüleme işlemi
 
 ---
 
