@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+const crypto = require('crypto');
 
 const customerSchema = new mongoose.Schema({
     name: {
@@ -22,14 +22,15 @@ const customerSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 // Password comparison method
-customerSchema.methods.comparePassword = async function(password) {
-    return await bcrypt.compare(password, this.password);
+customerSchema.methods.comparePassword = function(candidatePassword) {
+    const hash = crypto.scryptSync(candidatePassword, 'salt', 64);
+    return this.password === hash.toString('hex');
 };
 
 // Hash password before saving
-customerSchema.pre('save', async function(next) {
+customerSchema.pre('save', function(next) {
     if (this.isModified('password')) {
-        this.password = await bcrypt.hash(this.password, 10);
+        this.password = crypto.scryptSync(this.password, 'salt', 64).toString('hex');
     }
     next();
 });

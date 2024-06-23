@@ -49,10 +49,10 @@ function Navbar() {
                             </div>
                         ) : (
                             <>
-                                <div className='welcome' style={{ fontFamily: 'Font2' }}>
+                                <div className='welcome' style={{ fontFamily: 'Font2' ,color:'white'}}>
                                     Hoş geldin, {user.customerName}
                                 </div>
-                                <button onClick={logout} className='logout-button'>Çıkış Yap</button>
+                                <button onClick={logout} className='logout-button' style={{color:'white'}}>Çıkış Yap</button>
                             </>
                         )}
                         <Link to='/basket'>
