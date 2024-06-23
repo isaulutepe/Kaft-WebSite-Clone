@@ -26,6 +26,7 @@ function Basket() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -40,6 +41,10 @@ function Basket() {
           })
         );
         setProducts(productDetails);
+
+        // Toplam fiyatı hesapla
+        const total = productDetails.reduce((acc, product) => acc + parseFloat(product.price), 0);
+        setTotalPrice(total);
       } catch (error) {
         console.error('Ürün getirme hatası:', error);
         setError(error.message);
@@ -127,13 +132,18 @@ function Basket() {
           </table>
         </div>
       )}
-      <Link to="/">
-        <div style={{ textAlign: 'center' }}>Alışverişe Devam Et</div>
-      </Link>
-      <Link to="/payment">
-        <div style={{ textAlign: 'center' }}>Sepeti Onayla</div>
-      </Link>
-      <div  style={{ textAlign: 'center' }}><Kargo/></div>
+      <div style={{ textAlign: 'center' }}>
+        <h2>Toplam Fiyat: {totalPrice.toFixed(2)} TL</h2>
+        <Link to="/" className="basket-button">
+          Alışverişe Devam Et
+        </Link>
+        <Link to="/payment" className="basket-button">
+          Sepeti Onayla
+        </Link>
+      </div>
+      <div style={{ textAlign: 'center' }}>
+        <Kargo />
+      </div>
 
       <div style={{ background: '#f2f3ef', height: '120vh' }}>
         <br />
