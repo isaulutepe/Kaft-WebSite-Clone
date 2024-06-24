@@ -72,6 +72,13 @@ const Payment = () => {
         }
     }, []);
 
+    // Adres bilgilerini formatla
+    const formatAddress = (info) => {
+        if (!info) return '';
+        const { address, postalCode, city, country } = info;
+        return [address, postalCode, city, country].filter(Boolean).join(', ');
+    };
+
     return (
         <>
             <Navbar />
@@ -141,7 +148,7 @@ const Payment = () => {
                                             type="text"
                                             name="address"
                                             className="address-input"
-                                            value={`${addressInfo.address}, ${addressInfo.postalCode}, ${addressInfo.city}, ${addressInfo.country}`}
+                                            value={formatAddress(addressInfo)}
                                             readOnly
                                         />
                                         <button type="button" onClick={handleDeleteAddress} style={{ backgroundColor: '#d9534f', marginRight: '10px' }}>
@@ -150,7 +157,8 @@ const Payment = () => {
                                     </div>
                                 ) : (
                                     <span className="no-address">Adres KAYDI bulunamadı</span>
-                                )}<br></br>
+                                )}
+                                <br></br>
                                 <button type="button" onClick={handleAddAddress} style={{ backgroundColor: '#008cb1' }}>
                                     {addressInfo ? 'Adres Güncelle' : 'Adres Ekle'}
                                 </button>
