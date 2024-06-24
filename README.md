@@ -5,7 +5,7 @@ KAFT, tasarım odaklı bir e-ticaret platformudur. Amacımız, kullanıcıların
 
 **Referans Uygulama:** https://www.kaft.com/
 
-**Uygulama Adresi:
+**Uygulama Adresi:**
 
 **Grup adı:** Kaft Grup
 
