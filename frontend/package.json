@@ -1,5 +1,5 @@
 {
-  "proxy": "http://localhost:4000",
+  "proxy": "https://kaft-web-site-clone-server.vercel.app",
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
@@ -11,6 +11,7 @@
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "date-fns": "^3.6.0",
+    "dotenv": "^16.4.5",
     "feather-icons": "^4.29.2",
     "mdb-react-ui-kit": "^8.0.0",
     "react": "^18.3.1",
