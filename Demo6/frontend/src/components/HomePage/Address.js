@@ -49,62 +49,64 @@ function AddressForm() {
   };
 
   return (
-    <form className="form-container" onSubmit={handleSubmit}>
-      <div className="box">
-        <AddressField
-          name="Adres"
-          type="text"
-          placeholder="eg. Menteşe/Muğla"
-          className="small-input"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-        />
-        <AddressField
-          name="Posta kodu"
-          type="number"
-          placeholder=""
-          className="small-input"
-          value={postalCode}
-          onChange={(e) => setPostalCode(e.target.value)}
-        />
-        <div className="field">
-          <label>Şehir:</label>
-          <div className="control">
-            <select
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-              className="large-select"
-            >
-              <option value="">Şehir Seçin</option>
-              <option value="istanbul">İstanbul</option>
-              <option value="ankara">Ankara</option>
-              <option value="izmir">İzmir</option>
-            </select>
+    <div className="form-wrapper">
+      <form className="form-container" onSubmit={handleSubmit}>
+        <div className="box">
+          <AddressField
+            name="Adres"
+            type="text"
+            placeholder="eg. Menteşe/Muğla"
+            className="small-input"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+          />
+          <AddressField
+            name="Posta kodu"
+            type="number"
+            placeholder=""
+            className="small-input postal-input"
+            value={postalCode}
+            onChange={(e) => setPostalCode(e.target.value)}
+          />
+          <div className="field">
+            <label>Şehir:</label>
+            <div className="control">
+              <select
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+                className="large-select"
+              >
+                <option value="">Şehir Seçin</option>
+                <option value="istanbul">İstanbul</option>
+                <option value="ankara">Ankara</option>
+                <option value="izmir">İzmir</option>
+              </select>
+            </div>
+          </div>
+          <div className="field">
+            <label>Ülke:</label>
+            <div className="control">
+              <select
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
+                className="large-select"
+              >
+                <option value="">Ülke Seçin</option>
+                <option value="turkey">Türkiye</option>
+                <option value="usa">Amerika Birleşik Devletleri</option>
+                <option value="uk">Birleşik Krallık</option>
+              </select>
+            </div>
+          </div>
+          <div className="field is-grouped">
+            <div className="control">
+              <button type="submit" className="button is-link">Onayla</button>
+              {/* Diğer butonlar buraya eklenebilir */}
+            </div>
           </div>
         </div>
-        <div className="field">
-          <label>Ülke:</label>
-          <div className="control">
-            <select
-              value={country}
-              onChange={(e) => setCountry(e.target.value)}
-              className="large-select"
-            >
-              <option value="">Ülke Seçin</option>
-              <option value="turkey">Türkiye</option>
-              <option value="usa">Amerika Birleşik Devletleri</option>
-              <option value="uk">Birleşik Krallık</option>
-            </select>
-          </div>
-        </div>
-        <div className="field is-grouped">
-          <div className="control">
-            <button type="submit" className="button is-link">Onayla</button>
-            {/* Diğer butonlar buraya eklenebilir */}
-          </div>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 }
 
