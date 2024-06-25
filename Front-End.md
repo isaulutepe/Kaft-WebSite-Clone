@@ -26,8 +26,10 @@ Projemizde React çatısını kullandık.
 5. Admin ürün güncelleme sayfası tasarımı
 6. Ödeme sayfası tasarımı
 7. Adres sayfasının tasarımı
-# Engin Gül Tasarımlar
-
-1. ..
-2. ...
-3. ....
+   
+## Engin Gül Tasarımlar
+1. Açılıştaki SplashScreen Sayfası
+2. İletişim Sayfası
+3. Kampanyalı Ürünler Sayfası
+4. Arama Kutusu
+5. Filtreleme Barı
