@@ -263,3 +263,83 @@ button {
       }
       
 }
+/* main.css veya Navbar.css dosyasına ekleyin */
+
+.menucontainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menuitem.search {
+    position: absolute;
+    right: 200px; /* Sağdaki login butonundan 50px solda */
+}
+
+.search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px 15px;
+    font-size: 16px;
+    border-radius: 25px; /* Köşeleri yuvarladık */
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hafif gölge ekledik */
+    transition: all 0.3s ease; /* Geçiş animasyonu ekledik */
+    outline: none; /* Modern görünüm için outline'ı kaldırdık */
+}
+
+.search-input:focus {
+    border-color: #007bff; /* Odaklanma durumu için kenarlık rengi */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* Odaklanma durumu için gölge */
+}
+
+.search-results-container {
+    position: absolute;
+    background: white;
+    border: 1px solid #ddd;
+    z-index: 1000;
+    width: 100%;
+    max-width: 300px;
+    top: 40px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: black;
+}
+
+.search-results {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.search-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.search-item .content {
+    display: flex;
+    flex-direction: column;
+}
+.search-item .content h4 {
+    color: black; /* Bu satırı ekleyin */
+    margin: 0;
+    font-size: 14px; /* Yazı boyutunu isteğinize göre ayarlayabilirsiniz */
+}
+
+.search-item .content p {
+    margin: 0;
+    font-size: 12px; /* Yazı boyutunu isteğinize göre ayarlayabilirsiniz */
+    color: grey; /* İsteğinize göre bu rengi de değiştirebilirsiniz */
+}
+

@@ -52,7 +52,7 @@ exports.createProduct = [
 // Tüm ürünleri listeleme (filtreleme ile)
 exports.getAllProducts = async (req, res) => {
     try {
-        const { minPrice, maxPrice, ...otherFilters } = req.query;
+        const { minPrice, maxPrice, search, ...otherFilters } = req.query;
 
         const filters = { ...otherFilters };
 
@@ -60,6 +60,14 @@ exports.getAllProducts = async (req, res) => {
             filters.price = {};
             if (minPrice) filters.price.$gte = Number(minPrice);
             if (maxPrice) filters.price.$lte = Number(maxPrice);
+        }
+
+        if (search) {
+            filters.$or = [
+                { title: { $regex: search, $options: 'i' } },
+                { description: { $regex: search, $options: 'i' } },
+                { content: { $regex: search, $options: 'i' } },
+            ];
         }
 
         const products = await Product.find(filters);

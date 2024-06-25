@@ -89,6 +89,7 @@ body{
 }
 
 .filter-input {
+    color: white;
     margin-right: 10px; /* Inputlar arasında boşluk bırak */
     padding: 10px;
     font-size: 16px;
