@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "../../Css/FGmodal.css";
 import axios from 'axios';
-import FacebookLogin from 'react-facebook-login';
+
+//405729372433341
 
 function FacebookModal() {
     const [modal, setModal] = useState(false);
@@ -16,18 +17,7 @@ function FacebookModal() {
         document.body.classList.remove('active-modal');
     }
 
-    const responseFacebook = async (response) => {
-        console.log(response);
-        try {
-            const result = await axios.post("http://localhost:4000/facebooklogin", {
-                accessToken: response.accessToken,
-                userID: response.userID
-            });
-            console.log("Facebook login success, client side", result);
-        } catch (error) {
-            console.error("Facebook login error, client side", error);
-        }
-    };
+   
 
     return (
         <>
@@ -41,11 +31,7 @@ function FacebookModal() {
                     <div className="modal-content">
                         <span className="close" onClick={toggleModal}>&times;</span><br /><br />
                         <h2>Facebook ile giriş</h2>
-                        <FacebookLogin
-                            appId="405729372433341"
-                            autoLoad={false}
-                            fields="name,email,picture"
-                            callback={responseFacebook} />
+                        
                     </div>
                 </div>
             )}

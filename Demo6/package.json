@@ -2,7 +2,7 @@
   "dependencies": {
     "@ap.cx/react-fullpage": "^0.3.0",
     "react-dropzone": "^14.2.3",
-    "react-facebook-login": "^4.1.1",
+  
     "react-multi-carousel": "^2.8.5"
   }
 }
