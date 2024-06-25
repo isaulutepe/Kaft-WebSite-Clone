@@ -20,7 +20,7 @@ Projemizde React çatısını kullandık.
 ## Sena Yıldız Tasarımlar
 
 1. Sidebar tasarımı
-2. Tasarım tişört syafası tasarımı
+2. Tasarım tişört sayfası tasarımı
 3. Ürünlerin detay sayfasının tasarımı
 4. Sepete ekle sayfası tasarımı
 5. Admin ürün güncelleme sayfası tasarımı
