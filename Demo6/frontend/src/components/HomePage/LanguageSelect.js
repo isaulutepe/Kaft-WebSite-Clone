@@ -53,7 +53,7 @@ export default function LanguageSelect(props) {
             {/* Diğer dil seçenekleri eklenebilir */}
           </select>
         </div>
-        <button onClick={updateSettings}>Güncelle</button>
+        <button onClick={updateSettings} style={{color: '#fff'}}>Güncelle</button>
         <button onClick={updateSettings} className="not-update-btn">Güncellemeden devam et</button>
 
         <div className="modal-body">
