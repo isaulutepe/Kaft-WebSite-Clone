@@ -8,8 +8,9 @@ services:
       - key: NODE_ENV
         value: production
 
-  - type: web
+  - type: static
     name: frontend
     env: node
     buildCommand: cd frontend && npm install && npm run build
-    startCommand: cd frontend && npm run start
+    staticPublishPath: frontend/build
+
