@@ -18,6 +18,8 @@ import Basket from './components/HomePage/Basket';
 import UpdateProduct from './components/AdminPage/UpdateProduct';
 import Payment from './components/HomePage/Payment';
 import Address from './components/HomePage/Address';
+import CargoT from './components/AdminPage/CargoT';
+import Cargo from './components/HomePage/Cargo';
 
 function SplashHandler({ children }) {
   const location = useLocation();
@@ -68,6 +70,8 @@ function App() {
               <Route path="/basket" element={<Basket />} />
               <Route path="/payment" element={<Payment />} />
               <Route path="/address" element={<Address />} />
+              <Route path="/admin/cargot" element={<CargoT />} />
+              <Route path="/siparistakibi" element={<Cargo />} />
             </Routes>
           </div>
         </SplashHandler>

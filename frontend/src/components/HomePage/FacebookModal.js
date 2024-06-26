@@ -1,8 +1,7 @@
+/* global FB */
 import React, { useState } from "react";
 import "../../Css/FGmodal.css";
 import axios from 'axios';
-
-//405729372433341
 
 function FacebookModal() {
     const [modal, setModal] = useState(false);
@@ -11,13 +10,25 @@ function FacebookModal() {
         setModal(!modal);
     };
 
-    if (modal) {
-        document.body.classList.add('active-modal');
-    } else {
-        document.body.classList.remove('active-modal');
-    }
+    const facebookLogin = () => {
+        FB.login(function(response) {
+            if (response.status === 'connected') {
+                const accessToken = response.authResponse.accessToken;
+                console.log('Access Token:', accessToken);
 
-   
+                axios.post('/api/facebook-login', { accessToken })
+                    .then(response => {
+                        console.log('Sunucudan Gelen Yanıt:', response.data);
+                        toggleModal();
+                    })
+                    .catch(error => {
+                        console.error('Giriş Hatası:', error);
+                    });
+            } else {
+                console.log('User cancelled login or did not fully authorize.');
+            }
+        }, {scope: 'email'});
+    };
 
     return (
         <>
@@ -31,7 +42,9 @@ function FacebookModal() {
                     <div className="modal-content">
                         <span className="close" onClick={toggleModal}>&times;</span><br /><br />
                         <h2>Facebook ile giriş</h2>
-                        
+                        <button onClick={facebookLogin} className="facebookbutton">
+                            Facebook ile giriş yap
+                        </button>
                     </div>
                 </div>
             )}

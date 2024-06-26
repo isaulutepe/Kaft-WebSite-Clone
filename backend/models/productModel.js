@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+//ürün ekle
 
 const productSchema = new mongoose.Schema({
     title: {

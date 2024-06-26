@@ -104,6 +104,12 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
+        title: "Hediye Kartı",
+        path: "/GiftCard",
+        icon: <AiIcons.AiFillHome />,
+        cName: 'nav-text'
+    },
+    {
         title: "Lookbook",
         path: "/lookbook",
         icon: <AiIcons.AiFillHome />,
@@ -127,12 +133,7 @@ export const SidebarData = [
         icon: <AiIcons.AiFillHome />,
         cName: 'nav-text'
     },
-    {
-        title: "Hediye Kartı",
-        path: "/GiftCard",
-        icon: <AiIcons.AiFillHome />,
-        cName: 'nav-text'
-    },
+  
     {
         title: "Tişört Serileri",
         path: "/series",

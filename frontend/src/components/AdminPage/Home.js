@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import CargoT from './CargoT';
+
+import { Link } from 'react-router-dom';
+
 
 
 export default class Home extends Component {
@@ -7,7 +9,9 @@ export default class Home extends Component {
     return (
       <div style={{ margin: '10%' }}>
         <h1>ANA SAYFA</h1>
-        <CargoT/>
+        <Link to="/admin/cargot">
+        <div  style={{ textAlign: 'center' }}>Kargom takip yeri</div>
+        </Link>
       </div>
     )
   }

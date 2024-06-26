@@ -10,16 +10,16 @@
 6. Admin panelinde kullanıcıların görüntülenmesi
 7. Admin panelinde kullanıcı silme
 8. Admin panelinde yeni kullanıcı ekleme
-9. Admin panelinde yeni ürün ekleme
-10. Admin panelinde ürün silme
-11. Admin panelinde ürünleri görüntüleme
+9. Admin panelinde ürünleri görüntüleme
 ---
 
 ## İrem Maydan Kodlamalar
 
-1. ..
-2. ..
-3. ..
+1. Admin panelinde yeni ürün ekleme
+2. Admin panelinde ürün silme
+3. Kargo takip işlemi
+4. Hediye kartı satın alma
+5. Facebook ile giriş yapma
 
 ---
 

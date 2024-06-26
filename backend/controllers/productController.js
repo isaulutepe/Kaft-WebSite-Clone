@@ -27,7 +27,7 @@ const upload = multer({
     fileFilter: fileFilter
 });
 
-// Yeni ürün ekleme
+// Yeni ürün ekle
 exports.createProduct = [
     upload.single('image'),
     async (req, res) => {

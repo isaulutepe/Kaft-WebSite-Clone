@@ -13,9 +13,12 @@ Projemizde React çatısını kullandık.
 
 ## İrem Maydan Tasarımlar
 
-1. .
-2. ..
-3. ..
+1. gift card sayfası 
+2. Giriş yap modalı
+3. Üye olma sayfası
+4. kargo sayfası
+5. sipariş takibi sayfası
+6. Google ile giriş modalı
 
 ## Sena Yıldız Tasarımlar
 

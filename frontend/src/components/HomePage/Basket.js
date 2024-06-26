@@ -19,10 +19,12 @@ import { Autoplay } from 'swiper/modules';
 import tasarımlarımızagözat from '../../images/tasarımlarımızagözat.png';
 import { useCart } from '../../context/CartContex'; // Kart konteksinin doğru dosya adı
 import { Link } from 'react-router-dom';
-import Kargo from '../HomePage/Cargo'
+
+
+import GiftCardData from '../Products/GiftCardData';
 
 function Basket() {
-  const { cart } = useCart();
+  const { cart, setCart } = useCart();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -32,12 +34,22 @@ function Basket() {
     const fetchProducts = async () => {
       try {
         const productDetails = await Promise.all(
-          cart.map(async (id) => {
-            const response = await fetch(`/api/products/${id}`);
-            if (!response.ok) {
-              throw new Error('Ürün bulunamadı.');
+          cart.map(async (item) => {
+            if (item.type === 'product') {
+              const response = await fetch(`/api/products/${item.id}`);
+              if (!response.ok) {
+                throw new Error('Ürün bulunamadı.');
+              }
+              return response.json();
+            } else if (item.type === 'giftCard') {
+              const giftCard = GiftCardData.find(gc => gc.id === item.id);
+              if (!giftCard) {
+                throw new Error('Hediye kartı bulunamadı.');
+              }
+              return giftCard;
+            } else {
+              throw new Error('Bilinmeyen ürün tipi.');
             }
-            return response.json();
           })
         );
         setProducts(productDetails);
@@ -45,6 +57,7 @@ function Basket() {
         // Toplam fiyatı hesapla
         const total = productDetails.reduce((acc, product) => acc + parseFloat(product.price), 0);
         setTotalPrice(total);
+
       } catch (error) {
         console.error('Ürün getirme hatası:', error);
         setError(error.message);
@@ -60,6 +73,7 @@ function Basket() {
     }
   }, [cart]);
 
+
   if (loading) {
     return <div>Yükleniyor...</div>;
   }
@@ -73,16 +87,16 @@ function Basket() {
     image: 'Görsel',
     price: 'Fiyat',
     color: 'Renk',
+  
   };
-
+  
   return (
-    <div style={{backgroundColor:'#F2F3EF'}}>
+    <div style={{ backgroundColor: '#F2F3EF' }}>
       <Navbar />
       <br />
       <br />
       <br />
       <br />
-
       {cart.length === 0 ? (
         <>
           <h1 style={{ textAlign: 'center' }}>Sepetinde ürün bulunmuyor</h1>
@@ -115,7 +129,7 @@ function Basket() {
                     <img
                       className="basket-img"
                       style={{ width: '100px', height: '100px' }}
-                      src={`/${product.image}`}
+                      src={product.image}
                       alt={product.title}
                       onError={(e) => {
                         console.error("Error loading image:", e.target.src);
@@ -124,15 +138,19 @@ function Basket() {
                       }}
                     />
                   </td>
-                  <td className="basket-td">{product.price}</td>
-                  <td className="basket-td">{product.color}</td>
+                  <td className="basket-td">{product.price} TL</td>
+                  <td className="basket-td">{product.type === 'giftCard' ? 'Hediye Kartı' : product.color || '-'}</td>
+                  <td className="basket-td">
+                  
+                  </td>
                 </tr>
               ))}
             </tbody>
           </table>
+         
         </div>
       )}
-      <div style={{ textAlign: 'center' }}>
+    <div style={{ textAlign: 'center' }}>
         <h2>Toplam Fiyat: {totalPrice.toFixed(2)} TL</h2>
         <Link to="/" className="basket-button">
           Alışverişe Devam Et
@@ -140,10 +158,8 @@ function Basket() {
         <Link to="/payment" className="basket-button">
           Sepeti Onayla
         </Link>
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <Kargo />
-      </div>
+      </div>
+      
 
       <div style={{ background: '#f2f3ef', height: '120vh' }}>
         <br />
