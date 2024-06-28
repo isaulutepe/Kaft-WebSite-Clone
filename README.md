@@ -18,5 +18,5 @@ KAFT, tasarım odaklı bir e-ticaret platformudur. Amacımız, kullanıcıların
 5. [Veritabanı Diyagramı](Veritabanı-Diyagramı.md)
 6. [Front-End](Front-End.md)
 7. [Back-End](Back-End.md)
-8. Test
+8. [Test](Test.md)
 9. [Geliştirici Ve Kullanıcı Dökümantasyonları](Geliştirici-ve-Kullanıcı-Dokümantasyonları.md)
