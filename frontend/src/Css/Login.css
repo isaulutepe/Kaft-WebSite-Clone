@@ -49,18 +49,23 @@
     cursor: pointer;
 }
 
-input[type="text"],
 input[type="email"],
 input[type="password"] {
-    background-color: #ddd;
-    width: calc(100%-280px);
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 0px;
-
-
+  background-color: #ddd;
+  width: calc(100%-280px);
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 0px;
 }
+input[type="text"] {
+  background-color: #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+}
+
 
 .şifreyiunuttum {
 

@@ -19,7 +19,22 @@ app.use((req, res, next) => {
     next()
 })
 
+//Connect to db
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    app.listen(process.env.PORT, () => {
+      console.log("Connected to db");
+      console.log("Listining on port" + process.env.PORT);
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
 // Statik dosya servisi
+const _dirname = path.resolve();
+
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 //Routes
@@ -30,17 +45,14 @@ app.use('/api/products', productRoutes)
 app.use('/api/address', addressRoutes)
 // Değişiklik burada, dosya ismi doğru olmalı
 
+app.use(express.static(path.join(_dirname, "../frontend/build")));
 
-//Connect to db
-mongoose.connect(process.env.MONGO_URI)
-    .then(() => {
-        app.listen(process.env.PORT, () => {
-            console.log('Connected to db')
-            console.log('Listining on port' + process.env.PORT)
-        })
-    })
-    .catch((error) => {
-        console.log(error)
-    })
+app.get("*", (req, res) => {
+  res.sendFile(path.join(_dirname, "../frontend/build/index.html"));
+});
+
+
+
+
 
 
